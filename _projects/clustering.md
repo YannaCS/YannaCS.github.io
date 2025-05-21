@@ -3,7 +3,7 @@ layout: project
 title: Clustering Analysis and 3D Visualization Dashboard
 date: 2024-10-01
 screenshot:
-  src: /assets/img/projects/awesome-project.jpg
+  src: /assets/img/projects/cluster_0_10s.gif
   srcset:
     1920w: /assets/img/projects/cluster_0_10s.gif
     960w: /assets/img/projects/cluster_0_10s.gif
