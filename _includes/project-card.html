@@ -1,0 +1,27 @@
+<div class="project-card {% if project.featured %}featured{% endif %}">
+    <a href="{{ project.url | relative_url }}" class="project-link">
+      {% if project.screenshot %}
+        <div class="project-screenshot">
+          <img 
+            src="{{ project.screenshot.src }}" 
+            srcset="{% for hash in project.screenshot.srcset %}{{ hash[0] }}: {{ hash[1] }}{% unless forloop.last %}, {% endunless %}{% endfor %}" 
+            alt="{{ project.title }}" 
+          />
+        </div>
+      {% endif %}
+      <h3 class="project-title">{{ project.title }}</h3>
+      <div class="project-description">{{ project.description | markdownify }}</div>
+    </a>
+    
+    {% if project.links %}
+      <div class="project-direct-links">
+        {% for link in project.links %}
+          {% if link.title == "Repository" or link.title == "GitHub" %}
+            <a href="{{ link.url }}" class="direct-link" target="_blank" rel="noopener">
+              View Repository
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>

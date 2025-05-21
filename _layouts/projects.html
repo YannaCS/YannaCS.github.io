@@ -1,0 +1,17 @@
+---
+layout: base
+---
+
+<article class="page" role="article">
+  {% include page-title.html %}
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <div class="projects-container">
+    {% assign projects = site.projects | sort: "date" | reverse %}
+    {% for project in projects %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</article>
