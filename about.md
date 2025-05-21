@@ -16,21 +16,21 @@ Series Analysis, Text Analysis, Sentiment Analysis, Clustering(K-Means, KNN), Fe
 
 ## Experience
 
-- **Data Engineer Intern | Uplift Northwest** (June - Sept. 2024)
+- **Data Engineer Intern** | Uplift Northwest (June - Sept. 2024)  
   Optimized database schemas, built ETL pipelines, and developed interactive Tableau dashboards with drill-down capabilities. Created ML predictive models for client outcomes with scikit-learn.
 
-- **Data Analyst | Zhejiang Earthview Image Inc.** (Sept. 2020 - May 2022)
+- **Data Analyst** | Zhejiang Earthview Image Inc. (Sept. 2020 - May 2022)  
   Developed processing pipelines for terabytes of satellite imagery, created computer vision models achieving 87% classification accuracy, and contributed to an award-winning environmental monitoring project.
 
-- **Data Science Researcher | Financial Fraud Analytics Research** (Feb. - Aug. 2020)
-  Engineered features from one million financial transactions, optimized Gradient Boosting models achieving 99.07% classification accuracy, and published findings in IEEE conference proceedings.
+- **Data Science Researcher** | Financial Fraud Analytics Research (Feb. - Aug. 2020)  
+  Engineered features from one million financial transactions, optimized Gradient Boosting models achieving 99.07% classification accuracy, and published [findings in IEEE conference proceedings](https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ).
 
 ## Education
 
-- **Master of Science in Data Analytics Engineering (GPA: 3.96/4.00)** (Sept. 2023 - May 2025)
+- **Master of Science in Data Analytics Engineering (GPA: 3.96/4.00)** (Sept. 2023 - May 2025)  
   Northeastern University, Seattle, WA
 
-- **Bachelor of Engineering in Computer Science and Technology (Honors)** (Sept. 2017 - Aug. 2021)
+- **Bachelor of Engineering in Computer Science and Technology (Honors)** (Sept. 2017 - Aug. 2021)  
   Xiamen University, Malaysia
 
 ## Personal Life
