@@ -1,0 +1,28 @@
+/* Force left alignment */
+.welcome-section,
+.welcome-section div,
+.welcome-section p,
+.welcome-section ul,
+.welcome-section li {
+  text-align: left !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  max-width: 100% !important;
+}
+
+.content {
+  text-align: left !important;
+}
+
+.page {
+  text-align: left !important;
+}
+
+.markdown-body {
+  text-align: left !important;
+}
+
+/* Remove any potential centering */
+.center, .centered, .align-center, .text-center {
+  text-align: left !important;
+}

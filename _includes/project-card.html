@@ -13,10 +13,10 @@
   </a>
   
   {% if project.links %}
-    <div class="project-direct-links">
+    <div class="project-direct-links" style="text-align: left !important; padding-left: 1rem !important; padding-right: 1rem !important; padding-bottom: 1rem !important; width: 100% !important;">
       {% for link in project.links %}
         {% if link.title == "Repository" or link.title == "GitHub" %}
-          <a href="{{ link.url }}" class="direct-link" target="_blank" rel="noopener">
+          <a href="{{ link.url }}" class="direct-link" style="text-align: left !important; float: none !important; display: inline-block !important;" target="_blank" rel="noopener">
             View Repository
           </a>
         {% endif %}

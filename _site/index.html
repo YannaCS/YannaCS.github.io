@@ -24,9 +24,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
   
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>My Portfolio | Yanna Shen</title>
+<title>Welcome to my page! | Yanna Shen</title>
 <meta name="generator" content="Jekyll v3.9.5" />
-<meta property="og:title" content="My Portfolio" />
+<meta property="og:title" content="Welcome to my page!" />
 <meta name="author" content="Yanna Shen" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="A showcase of my projects." />
@@ -36,9 +36,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 <meta property="og:site_name" content="Yanna Shen" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="My Portfolio" />
+<meta property="twitter:title" content="Welcome to my page!" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Yanna Shen"},"description":"A showcase of my projects.","headline":"My Portfolio","name":"Yanna Shen","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/icons/icon.png"},"name":"Yanna Shen"},"url":"http://localhost:4000/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Yanna Shen"},"description":"A showcase of my projects.","headline":"Welcome to my page!","name":"Yanna Shen","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/icons/icon.png"},"name":"Yanna Shen"},"url":"http://localhost:4000/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -154,7 +154,8 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 
 
-
+<!-- file: _includes/head.html -->
+<link rel="stylesheet" href="/assets/css/custom.css">
 </head>
 
 <body>
@@ -174,7 +175,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 <hy-push-state>
   <main
     id="_main"
-    class="content fade-in layout-projects"
+    class="content fade-in layout-custom-projects"
     role="main"
     data-color="#4fb1ba"
     data-theme-color=""
@@ -184,47 +185,74 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     
     >
     <article class="page" role="article">
+  <h1 class="page-title">Welcome to my page!</h1>
   
-  <h1 class="page-title">My Portfolio</h1>
-  
+  <div class="markdown-body">
+    <div class="welcome-section" style="text-align: left !important;">
 
-  <div class="content">
-    <h1 id="welcome-to-my-portfolio">Welcome to My Portfolio</h1>
+I am a Data Passionate with expertise in building end-to-end data solutions, from ETL pipelines to interactive visualizations and predictive ML models. With a background in Computer Science and Data Analytics Engineering, I combine technical expertise with analytical problem-solving.
 
-<p>Here you’ll find a collection of my projects. Click on any of them to learn more or visit the repository directly.</p>
+<div style="margin-bottom: 30px;"></div>
+<div class="projects-intro" style="text-align: left !important;">
+  <p>Browse my projects showcasing skills in:</p>
+  <ul class="skill-tags">
+    <li>Data Engineering &amp; ETL</li>
+    <li>Machine Learning</li>
+    <li>Data Visualization</li>
+    <li>Database Design</li>
+    <li>NLP &amp; Computer Vision</li>
+  </ul>
+</div>
+<div style="margin-bottom: 30px;"></div>
+<div class="expertise-highlights" style="text-align: left !important;">
+  <p>As a <strong>Tableau Certified Data Analyst</strong> with professional experience in data engineering and analytics, I specialize in:</p>
+  <ul>
+    <li>Creating normalized database schemas and optimizing data models</li>
+    <li>Developing interactive dashboards that transform data into actionable insights</li>
+    <li>Building predictive models using scikit-learn, TensorFlow and statistical methods</li>
+    <li>Implementing ETL pipelines for efficient data processing and integration</li>
+  </ul>
+</div>
+
+</div>
 
   </div>
-
-  <div class="projects-container">
+  
+  <h2 class="project-gallery-title">Project Gallery</h2>
+  <div class="custom-projects-container">
     
     
-      <div class="project-card featured">
-    <a href="/projects/clustering/" class="project-link">
-      
-        <div class="project-screenshot">
-          <img 
-            src="/assets/img/projects/awesome-project.jpg" 
-            srcset="1920w: /assets/img/projects/cluster_0_10s.gif, 960w: /assets/img/projects/cluster_0_10s.gif, 480w: /assets/img/projects/cluster_0_10s.gif" 
-            alt="Project Details" 
-          />
-        </div>
-      
-      <h3 class="project-title">Project Details</h3>
-      <div class="project-description"><p>A dashboard for analyzing datasets using K-means and Hierarchical clustering algorithms. This tool helps determine the optimal number of clusters and provides detailed visualizations and comparisons of clustering results.</p>
-</div>
-    </a>
-    
-    
-      <div class="project-direct-links">
+      <div class="custom-project-card">
+    <div class="custom-card-inner">
+      <div class="custom-screenshot">
         
-          
-            <a href="https://github.com/YannisCS/Clustering-and-3D-Visualization" class="direct-link" target="_blank" rel="noopener">
-              View Repository
-            </a>
-          
+          <img src="/assets/img/projects/cluster_0_10s.gif" alt="Clustering Analysis and 3D Visualization Dashboard" />
         
       </div>
-    
+      
+      <div class="custom-content">
+        <a href="/projects/clustering/" class="custom-title-link">
+          <h3 class="custom-title">Clustering Analysis and 3D Visualization Dashboard</h3>
+        </a>
+        
+        <div class="custom-description">
+          <p>A dashboard for analyzing datasets using K-means and Hierarchical clustering algorithms. This tool helps determine the optimal number of clusters and provides detailed visualizations and comparisons of clustering results.</p>
+
+        </div>
+        
+        
+          <div class="custom-links">
+            
+              
+                <a href="https://github.com/YannisCS/Clustering-and-3D-Visualization" class="custom-repo-link" target="_blank" rel="noopener">
+                  View Repository
+                </a>
+              
+            
+          </div>
+        
+      </div>
+    </div>
   </div>
     
   </div>
@@ -235,7 +263,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     <footer role="contentinfo">
   <hr/>
   
-    <p><small class="copyright">© 2017. All rights reserved.
+    <p><small class="copyright">© 2023. All rights reserved.
 </small></p>
   
   
@@ -272,32 +300,6 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>
         <a
           id="_navigation"
-          href="/projects/"
-          class="sidebar-nav-item"
-          
-          >
-          Projects
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a
-          
-          href="/tag/hyde/"
-          class="sidebar-nav-item"
-          
-          >
-          Hyde
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a
-          
           href="/about/"
           class="sidebar-nav-item"
           
@@ -311,24 +313,11 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>
         <a
           
-          href="/tag/hydejack/"
+          href="/projects/"
           class="sidebar-nav-item"
           
           >
-          Hydejack
-        </a>
-      </li>
-    
-  
-    
-      <li>
-        <a
-          
-          href="/docs/7.5.2/"
-          class="sidebar-nav-item"
-          
-          >
-          Documentation
+          Projects
         </a>
       </li>
     
@@ -342,6 +331,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <div class="sidebar-social">
         <span class="sr-only">Social:</span>
 <ul>
+  
+    
+    
   
 
   
@@ -362,9 +354,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 
 <li>
-  <a href="https://twitter.com/<username>" title="Twitter" class="no-mark-external">
-    <span class="icon-twitter"></span>
-    <span class="sr-only">Twitter</span>
+  <a href="https://github.com/YannisCS" title="GitHub" class="no-mark-external">
+    <span class="icon-github"></span>
+    <span class="sr-only">GitHub</span>
   </a>
 </li>
 
@@ -384,9 +376,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 
 <li>
-  <a href="https://github.com/<username>" title="GitHub" class="no-mark-external">
-    <span class="icon-github"></span>
-    <span class="sr-only">GitHub</span>
+  <a href="https://www.linkedin.com/in/chengyang-shen" title="LinkedIn" class="no-mark-external">
+    <span class="icon-linkedin2"></span>
+    <span class="sr-only">LinkedIn</span>
   </a>
 </li>
 

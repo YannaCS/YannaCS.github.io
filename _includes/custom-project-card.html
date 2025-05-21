@@ -1,0 +1,31 @@
+<div class="custom-project-card">
+    <div class="custom-card-inner">
+      <div class="custom-screenshot">
+        {% if project.screenshot %}
+          <img src="{{ project.screenshot.src | relative_url }}" alt="{{ project.title }}" />
+        {% endif %}
+      </div>
+      
+      <div class="custom-content">
+        <a href="{{ project.url | relative_url }}" class="custom-title-link">
+          <h3 class="custom-title">{{ project.title }}</h3>
+        </a>
+        
+        <div class="custom-description">
+          {{ project.description | markdownify }}
+        </div>
+        
+        {% if project.links %}
+          <div class="custom-links">
+            {% for link in project.links %}
+              {% if link.title == "Repository" or link.title == "GitHub" %}
+                <a href="{{ link.url }}" class="custom-repo-link" target="_blank" rel="noopener">
+                  View Repository
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>

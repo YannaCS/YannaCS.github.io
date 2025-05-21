@@ -1,0 +1,19 @@
+---
+layout: base
+---
+
+<article class="page" role="article">
+  {% if page.title %}<h1 class="page-title">{{ page.title }}</h1>{% endif %}
+  
+  <div class="markdown-body">
+    {{ content }}
+  </div>
+  
+  <h2 class="project-gallery-title">Project Gallery</h2>
+  <div class="custom-projects-container">
+    {% assign projects = site[page.show_collection] | sort: "date" | reverse %}
+    {% for project in projects %}
+      {% include custom-project-card.html project=project %}
+    {% endfor %}
+  </div>
+</article>
