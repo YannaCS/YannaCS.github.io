@@ -107,6 +107,7 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
   margin-top: 2rem;
+  text-align: left !important;
 }
 
 .custom-project-card {
@@ -145,6 +146,8 @@
   flex-direction: column;
   padding: 1rem;
   flex-grow: 1;
+  height: calc(100% - 200px); /* Subtract screenshot height */
+  position: relative;
 }
 
 .custom-title-link {
@@ -159,24 +162,28 @@
 .custom-title {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  text-align: left;
+  text-align: left !important;
 }
 
 .custom-description {
   font-size: 0.9rem;
   color: #555;
-  text-align: left;
+  text-align: left !important;
   margin-bottom: 1rem;
   flex-grow: 1;
   
   p {
-    text-align: left;
+    text-align: left !important;
   }
+}
+// Add a spacer to push the links to the bottom
+.custom-spacer {
+  flex-grow: 1;
 }
 
 .custom-links {
-  text-align: left;
-  margin-top: auto;
+  text-align: left !important;
+  margin-top: 1rem;
 }
 
 .custom-repo-link {
@@ -186,7 +193,7 @@
   color: white;
   border-radius: 4px;
   text-decoration: none;
-  text-align: left;
+  text-align: left !important;
   
   &:hover {
     background: #364FC7;
@@ -198,6 +205,10 @@
 .welcome-section, .welcome-section *, .projects-intro, .projects-intro *, .expertise-highlights, .expertise-highlights * {
   text-align: left !important;
 }
+// Force left alignment for all project page content
+.projects-page, .projects-page *, .projects-content, .projects-content * {
+  text-align: left !important;
+}
 
 // Project Gallery title styling
 .project-gallery-title {
@@ -205,7 +216,7 @@
   margin-bottom: 1.5rem;
   font-size: 2rem;
   color: #2d5d63;
-  text-align: left;
+  text-align: left !important;
   border-bottom: 2px solid #4fb1ba;
   padding-bottom: 0.5rem;
   width: fit-content;

@@ -1,9 +1,12 @@
 ---
-layout: projects
+layout: custom-projects
 title: Projects
 show_collection: projects
-permalink: /projects/
 menu: true
 order: 2
+hide_title: true
 ---
-Here are some of my projects. Click on any of them to learn more and visit the repository.
+
+<div style="text-align: left !important;">
+Here you'll find a collection of my data science and engineering projects. Each demonstrates different aspects of my technical skills and problem-solving approach.
+</div>
