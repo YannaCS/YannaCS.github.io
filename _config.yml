@@ -195,7 +195,8 @@ plugins:
   # - jekyll-readme-index
   # - jekyll-redirect-from
   - jekyll-relative-links
-  # - jekyll-remote-theme
+  - jekyll-include-cache
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   # - jekyll-titles-from-headings
@@ -205,6 +206,7 @@ plugins:
 
 # theme: jekyll-theme-hydejack
 # remote_theme: qwtel/hydejack@gem
+remote_theme: hydecorp/hydejack@v7
 
 # SEO Tag
 # ---------------------------------------------------------------------------------------
