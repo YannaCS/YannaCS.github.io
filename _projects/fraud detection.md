@@ -1,7 +1,7 @@
 ---
 layout: project
 title: Fraud Detection by Machine Learning
-date: 2024-11-01
+date: 2020-08-01
 screenshot:
   src: /assets/img/projects/poster1.png
   srcset:
