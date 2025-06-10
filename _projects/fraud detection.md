@@ -9,7 +9,7 @@ screenshot:
     960w: /assets/img/projects/poster1.png
     480w: /assets/img/projects/poster1.png
 description: >
-  A comprehensive machine learning pipeline for detecting fraudulent transactions with 99.5% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.
+  A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.
 links:
   - title: Repository
     url: https://github.com/YannaCS/Fraud-Detection-By-Machine-Learning
