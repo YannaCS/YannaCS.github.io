@@ -2,13 +2,16 @@
   <h1 class="page-title">{{ page.title }}</h1>
 
   {% if page.screenshot %}
-    <div class="project-screenshot">
-      <img 
-        src="{{ page.screenshot.src | relative_url }}" 
-        alt="{{ page.title }}" 
-      />
-    </div>
-  {% endif %}
+  <div class="project-screenshot">
+    <img 
+      src="{{ page.screenshot.src | relative_url }}" 
+      alt="{{ page.title }}"
+      {% if page.screenshot.max_height %}
+        style="max-height: {{ page.screenshot.max_height }}; width: auto;"
+      {% endif %}
+    />
+  </div>
+{% endif %}
 
   <div class="project-description">
     {{ page.description | markdownify }}

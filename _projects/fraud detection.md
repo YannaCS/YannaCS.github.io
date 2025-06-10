@@ -4,10 +4,11 @@ title: Fraud Detection by Machine Learning
 date: 2020-08-01
 screenshot:
   src: /assets/img/projects/poster1.png
+  max_height: 850px  # Custom height for this specific project
   srcset:
     1920w: /assets/img/projects/poster1.png
-    960w: /assets/img/projects/poster1.png
-    480w: /assets/img/projects/poster1.png
+    960w: /assets/img/projects/poster1@0.5x.png
+    480w: /assets/img/projects/poster1@0.25x.png
 description: >
   A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.
 links:
@@ -42,9 +43,12 @@ Here's more detailed information about it:
 - **53.46% Fraud Detection Rate**: Catches more than half fraudulent transactions
 - **<0.5% False Positive Rate**: Minimizes customer friction
 - **0.76 AUC-ROC Score**: Good model discrimination
-- **Production Ready**: Scalable architecture for real-world deployment
-/Users/yannisshen/Documents/GitHub/mypage/assets/img/projects/poster2.png
-/Users/yannisshen/Documents/GitHub/mypage/assets/img/projects/poster3.png
+- **Production Ready**: Scalable architecture for real-world deployment  
+
+<img src="/assets/img/projects/poster2.png" alt="Baseline vs Optimized & Optimized Models Performance Comparison" style="height: 750px; width: auto;">   
+<img src="/assets/img/projects/poster3.png" alt="XGBoost Evaluation" style="height: 850px; width: auto;"> 
+
+
 ### Technology Stack
 
 - Python
