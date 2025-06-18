@@ -17,9 +17,9 @@ title:                 Yanna Shen
 description:           >
   A showcase of my projects.
 
-# A shorter description for the sidebar.
+# A shorter description for the sidebar. previous: Developer Portfolio
 tagline:               >
-  Developer Portfolio
+  click to view or download
 
 # A list of keywords for your blog
 keywords:              []
@@ -42,7 +42,7 @@ menu:
     url:               /projects
 
 # This text will appear in a `<small>` tag in the footer of every page.
-copyright:             © 2023. All rights reserved.
+copyright:             © 2025. All rights reserved.
 
 # Format of the permalinks
 permalink:             pretty

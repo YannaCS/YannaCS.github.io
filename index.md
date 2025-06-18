@@ -7,7 +7,7 @@ cover: true
 
 <div class="welcome-section" style="text-align: left !important;">
 
-I am a Data Passionate with expertise in building end-to-end data solutions, from ETL pipelines to interactive visualizations and predictive ML models. With a background in Computer Science and Data Analytics Engineering, I combine technical expertise with analytical problem-solving.
+I am a Data Passionate with expertise in building end-to-end data solutions, from ETL pipelines to interactive visualizations and predictive Machine Learning models. With a background in Computer Science and Data Analytics Engineering, I combine technical expertise with analytical problem-solving.
 
 <div style="margin-bottom: 30px;"></div>
 <div class="projects-intro" style="text-align: left !important;">

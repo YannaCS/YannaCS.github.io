@@ -9,12 +9,13 @@ screenshot:
     960w: /assets/img/projects/cluster_0_10s.gif
     480w: /assets/img/projects/cluster_0_10s.gif
 description: >
-  A dashboard for analyzing datasets using K-means and Hierarchical clustering algorithms. This tool helps determine the optimal number of clusters and provides detailed visualizations and comparisons of clustering results.
+  A dashboard for analyzing datasets using K-means and Hierarchical clustering algorithms. This tool helps determine the optimal number of clusters and provides detailed 3d visualizations and comparisons of clustering results.  
+  🎯 [Click here and Try it out (plz wait it waking up for a moment)](https://clustering-and-3d-plot.streamlit.app/) 
 links:
   - title: Repository
     url: https://github.com/YannisCS/Clustering-and-3D-Visualization
 featured: true
----
+--- 
 
 ## Project Details
 

@@ -4,7 +4,7 @@ title: Fraud Detection by Machine Learning
 date: 2020-08-01
 screenshot:
   src: /assets/img/projects/poster1.png
-  max_height: 850px  # Custom height for this specific project
+  #max_height: 850px  # Custom height for this specific project
   srcset:
     1920w: /assets/img/projects/poster1.png
     960w: /assets/img/projects/poster1@0.5x.png
@@ -45,8 +45,8 @@ Here's more detailed information about it:
 - **0.76 AUC-ROC Score**: Good model discrimination
 - **Production Ready**: Scalable architecture for real-world deployment  
 
-<img src="/assets/img/projects/poster2.png" alt="Baseline vs Optimized & Optimized Models Performance Comparison" style="height: 750px; width: auto;">   
-<img src="/assets/img/projects/poster3.png" alt="XGBoost Evaluation" style="height: 850px; width: auto;"> 
+<img src="/assets/img/projects/poster2.png" alt="Baseline vs Optimized & Optimized Models Performance Comparison">   
+<img src="/assets/img/projects/poster3.png" alt="XGBoost Evaluation"> 
 
 
 ### Technology Stack

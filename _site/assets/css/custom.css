@@ -1,4 +1,4 @@
-/* Force left alignment */
+/* ===== FORCE LEFT ALIGNMENT ===== */
 .welcome-section,
 .welcome-section div,
 .welcome-section p,
@@ -25,4 +25,496 @@
 /* Remove any potential centering */
 .center, .centered, .align-center, .text-center {
   text-align: left !important;
+}
+
+/* ===== BASE PROJECT STYLES ===== */
+
+/* Base styles for all screen sizes */
+.project {
+  width: 100%;
+  padding: 1rem 2rem 2rem 2rem !important;
+  max-width: none !important;
+  margin: 0 !important;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+/* Override Hydejack's content width restrictions */
+#_main,
+.content,
+.page,
+main,
+.container,
+.container-lg,
+.container-md,
+.container-sm,
+.layout-project,
+.layout-project .content {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+.container,
+.container-lg,
+.container-md,
+.container-sm {
+  padding: 0 !important;
+}
+
+/* ===== PROJECT HEADER STYLES ===== */
+
+.project-header {
+  position: relative;
+  margin-bottom: 10px !important;
+  overflow: visible;
+  padding-bottom: 20px !important;
+}
+
+.project-header::after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+/* ===== PROJECT SCREENSHOT STYLES ===== */
+
+.project-screenshot {
+  position: relative !important;
+  overflow: visible !important;
+  margin-bottom: 1rem !important;
+}
+
+.project-screenshot img {
+  position: relative !important;
+  width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== PROJECT CONTENT STYLES ===== */
+
+.project-content {
+  position: relative;
+  clear: both;
+  z-index: 1;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-align: left;
+  padding-top: 40px !important; /* Increase for more space above body */
+  margin-top: 40px !important; /* Increase for even more space */
+  border-top: 2px solid transparent;
+}
+
+.project-content h2 {
+  margin-top: 1.5rem !important;
+  padding-top: 0.25rem;
+}
+
+.project-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* All text elements left-aligned */
+.project h1, .project h2, .project h3, 
+.project p, .project ul, .project li {
+  text-align: left !important;
+}
+
+/* Reduce space above title */
+.project .page-title {
+  margin-top: 0 !important; /* Change this to add space above title */
+  padding-top: 0 !important;
+  margin-bottom: 1rem !important; /* Add this to control space below title */
+}
+
+/* Dynamic spacer styling */
+.project-spacer {
+  clear: both;
+  width: 100%;
+}
+
+/* Clear floats */
+.project::after,
+.project-header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.project::after {
+  margin-bottom: 0.5rem;
+}
+
+/* Fix positioning */
+.project * {
+  position: relative !important;
+}
+
+.project img {
+  position: static !important;
+}
+
+/* ===== RESPONSIVE LAYOUTS ===== */
+
+/* Small screens (mobile) - single column */
+@media (max-width: 63.99em) {
+  .project {
+    padding: 0.5rem 1rem !important;
+  }
+  
+  .project-header {
+    display: block !important;
+    min-height: auto;
+    margin-bottom: 10px !important;
+  }
+  
+  .project-description,
+  .project-screenshot {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .project-description {
+    margin-bottom: 1rem;
+  }
+  
+  .project-screenshot {
+    margin: 1rem 0 !important;
+  }
+  
+  .project-screenshot img {
+    width: 100%;
+    height: auto !important;
+    max-height: 600px; /* Increased from 500px */
+    object-fit: contain;
+  }
+  
+  .project-content {
+    padding-top: 20px !important;
+    margin-top: 2rem !important;
+  }
+  
+  /* When sidebar is open on mobile */
+  #_drawer:checked ~ #_main .project {
+    margin-left: 0 !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .project {
+    padding: 0.5rem 0.5rem 2rem 0.5rem !important;
+  }
+  
+  .project-header {
+    gap: 1rem;
+  }
+  
+  .project-screenshot {
+    margin-bottom: 2rem !important;
+  }
+  
+  .project-screenshot img {
+    max-height: 400px; /* Increased from 300px */
+  }
+}
+
+/* Medium screens - OVERLAP PREVENTION */
+@media (min-width: 480px) and (max-width: 1023px) {
+  /* Force single column layout */
+  .project-header {
+    display: block !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .project-description {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .project-screenshot {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto 80px auto !important;
+    padding-bottom: 20px !important;
+    max-width: 1100px; /* Increased from 850px */
+  }
+  
+  .project-screenshot img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Add visual separator */
+  .project-screenshot::after {
+    content: "";
+    display: block;
+    height: 40px;
+    width: 100%;
+  }
+  
+  /* Force content to start below */
+  .project-content {
+    display: block !important;
+    margin-top: 100px !important;
+    padding-top: 50px !important;
+    clear: both;
+    position: relative;
+  }
+}
+
+/* Large screens (desktop) with sidebar */
+@media (min-width: 1024px) {
+  /* When sidebar is visible */
+  body:not(.no-drawer) .project {
+    margin-left: 21rem;
+    width: calc(100% - 21rem) !important;
+    padding: 1rem 3rem 2rem 3rem !important;
+  }
+  
+  /* Two column layout with bigger images */
+  .project-header {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 20px !important;
+  }
+  
+  .project-header .project-description {
+    flex: 0.6; /* Smaller text column */
+    min-width: 280px;
+    max-width: 400px;
+  }
+  
+  .project-header .project-screenshot {
+    flex: 2.5; /* Much bigger image column */
+    min-width: 700px;
+    max-width: none; /* No limit */
+  }
+  
+  .project-screenshot img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Handle when sidebar is closed/hidden */
+  body.no-drawer .project,
+  #_drawer:not(:checked) ~ #_main .project {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 1rem 4rem 2rem 4rem !important;
+  }
+  
+  .project-content {
+    padding-top: 30px !important;
+    margin-top: 30px !important;
+  }
+}
+
+/* Very large screens */
+@media (min-width: 90em) {
+  body:not(.no-drawer) .project {
+    padding: 1rem 6rem 2rem 6rem !important;
+  }
+  
+  .project-header {
+    gap: 3rem;
+  }
+  
+  .project-header .project-description {
+    flex: 0.5; /* Even smaller text */
+    max-width: 450px;
+  }
+  
+  .project-header .project-screenshot {
+    flex: 3; /* Even bigger images */
+    max-width: none;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 120em) {
+  /* Center content on very wide screens */
+  .project-header {
+    max-width: 2000px; /* Increased from 1800px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .project-content {
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .project-header .project-description {
+    flex: 0.4;
+  }
+  
+  .project-header .project-screenshot {
+    flex: 3.5; /* Maximum size for ultra-wide */
+  }
+}
+
+/* ===== FIX PAGE ALIGNMENT ===== */
+
+/* Reset all pages to start from the left */
+.page,
+article.page,
+.content .page {
+  margin-left: 0 !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Project pages - already handled above */
+.project {
+  margin-left: 0 !important;
+}
+
+/* When sidebar is visible on desktop */
+@media (min-width: 64em) {
+  body:not(.no-drawer) .page,
+  body:not(.no-drawer) article.page {
+    margin-left: 21rem !important;
+    width: calc(100% - 21rem) !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+  }
+  
+  body:not(.no-drawer) .project {
+    margin-left: 21rem !important;
+    width: calc(100% - 21rem) !important;
+  }
+}
+
+/* When sidebar is closed */
+@media (min-width: 64em) {
+  body.no-drawer .page,
+  body.no-drawer article.page,
+  #_drawer:not(:checked) ~ #_main .page,
+  #_drawer:not(:checked) ~ #_main article.page {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+/* Mobile - ensure everything is left-aligned */
+@media (max-width: 63.99em) {
+  .page,
+  article.page,
+  .project {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Remove any centering */
+#_main,
+.content,
+main {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Hide permalink icons */
+.project .permalink,
+.project h2 .permalink,
+.project h3 .permalink {
+  display: none !important;
+}
+
+/* ===== FORCE STACKED LAYOUT TO PREVENT OVERLAP ===== */
+
+/* For all screens except very large ones, stack the content */
+@media (max-width: 1400px) {
+  .project-header {
+    display: block !important; /* Force stacking */
+    flex-direction: column !important;
+  }
+  
+  .project-description,
+  .project-screenshot {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+    margin: 0 auto !important;
+  }
+  
+  .project-description {
+    margin-bottom: 2rem !important; /* Space between text and image */
+  }
+  
+  .project-screenshot {
+    margin-top: 2rem !important;
+    margin-bottom: 3rem !important;
+    text-align: center;
+  }
+  
+  .project-screenshot img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* Only use side-by-side layout on very large screens */
+@media (min-width: 1401px) {
+  .project-header {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  
+  .project-description {
+    flex: 0.4;
+    min-width: 300px;
+    max-width: 400px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  .project-screenshot {
+    flex: 1;
+    min-width: 600px;
+  }
+}
+
+/* Ensure text always wraps */
+.project-description,
+.project-description * {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+  max-width: 100% !important;
+}
+
+/* Handle long links */
+.project-description a {
+  word-break: break-all !important;
+  display: inline-block;
+  max-width: 100%;
 }

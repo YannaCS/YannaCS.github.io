@@ -24,7 +24,7 @@ author1:
   social:
     #twitter:          <username>
     github:            YannaCS
-    # email:           mailto:<mail@domain.tld>
+    email:             mailto:yanna.cshen@gmail.com
     # rss:             https://<url>/feed.xml
     # facebook:        <username>
     # google:          <number>
@@ -59,6 +59,7 @@ author1:
     # delicious:       <username>
     # stumbleupon:     <username>
     # paypal:          <username>
-    # download:        https://github.com/qwtel/hydejack-starter-kit/archive/v7.5.0.zip
+    # download:        /assets/resume_Jun_09_2025.pdf
+    resume:            /assets/resume_Jun_09_2025.pdf
 
 

@@ -1,22 +1,32 @@
+---
+layout: base
+---
+
 <article class="project" role="article">
   <h1 class="page-title">{{ page.title }}</h1>
-
-  {% if page.screenshot %}
-  <div class="project-screenshot">
-    <img 
-      src="{{ page.screenshot.src | relative_url }}" 
-      alt="{{ page.title }}"
-      {% if page.screenshot.max_height %}
-        style="max-height: {{ page.screenshot.max_height }}; width: auto;"
-      {% endif %}
-    />
+  
+  <!-- Two-column header section -->
+  <div class="project-header">
+    <!-- Left column: Description -->
+    <div class="project-description">
+      {{ page.description | markdownify }}
+    </div>
+    
+    <!-- Right column: Screenshot -->
+    {% if page.screenshot %}
+    <div class="project-screenshot">
+      <img 
+        src="{{ page.screenshot.src | relative_url }}" 
+        alt="{{ page.title }}"
+        {% if page.screenshot.max_height %}
+          style="max-height: {{ page.screenshot.max_height }};"
+        {% endif %}
+      />
+    </div>
+    {% endif %}
   </div>
-{% endif %}
 
-  <div class="project-description">
-    {{ page.description | markdownify }}
-  </div>
-
+  <!-- Full width content section -->
   <div class="project-content">
     {{ content }}
   </div>
@@ -32,4 +42,67 @@
       </ul>
     </div>
   {% endif %}
+
+  <!-- Add this script here -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('.project-header');
+      const content = document.querySelector('.project-content');
+      const screenshot = document.querySelector('.project-screenshot');
+      
+      if (header && content) {
+        function fixOverlap() {
+          // Reset any previous adjustments
+          content.style.marginTop = '';
+          content.style.paddingTop = '';
+          
+          // Wait a moment for layout to settle
+          setTimeout(() => {
+            // Get all images in the header
+            const images = header.querySelectorAll('img');
+            let maxBottom = header.getBoundingClientRect().bottom;
+            
+            // Find the lowest point of any image
+            images.forEach(img => {
+              const imgRect = img.getBoundingClientRect();
+              maxBottom = Math.max(maxBottom, imgRect.bottom);
+            });
+            
+            // Get content position
+            const contentTop = content.getBoundingClientRect().top;
+            
+            // Calculate needed spacing
+            const currentGap = contentTop - maxBottom;
+            
+            // If overlapping or too close (less than 30px gap)
+            if (currentGap < 30) {
+              const neededMargin = 30 - currentGap;
+              content.style.paddingTop = neededMargin + 'px';
+            }
+            
+            // For medium screens, add extra spacing
+            if (window.innerWidth >= 480 && window.innerWidth <= 1024) {
+              const currentPadding = parseInt(content.style.paddingTop) || 0;
+              content.style.paddingTop = (currentPadding + 50) + 'px';
+            }
+          }, 100);
+        }
+        
+        // Run on various events
+        fixOverlap();
+        window.addEventListener('resize', fixOverlap);
+        window.addEventListener('load', fixOverlap);
+        
+        // Watch for image loads
+        const images = header.querySelectorAll('img');
+        images.forEach(img => {
+          img.addEventListener('load', fixOverlap);
+          // Also check if image is already cached
+          if (img.complete) {
+            setTimeout(fixOverlap, 50);
+          }
+        });
+      }
+    });
+    </script>
 </article>
