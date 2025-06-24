@@ -637,9 +637,14 @@ strong:contains("HIRE ME") {
 }
 </style>
 
-<!-- Time line items -->
+<!-- Content -->
 ## Here's where I am presently, and where I'm headed
-Click cards for details
+<div class="hint">
+  <span class="hint-icon">💡</span>
+  <span class="hint-text">Click cards for details</span>
+</div>
+
+<!-- Time line items -->
 <!-- <div class="timeline-marker">PRESENT</div> -->
 <div class="timeline-container">
 
@@ -656,8 +661,8 @@ Click cards for details
         </div>
         <div class="timeline-description">
           <ul class="timeline-bullets">
-            <li>3-Years OPT (STEM qualified)</li>
-            <li>I can bring you <b>more profits</b> than a lot people who don't need sponsorship</li>
+            <li>3-Years OPT (STEM qualified), NO need of sponsorship</li>
+            <li>After 3 years: I can bring you <b>more profits</b> than a lot people who don't need sponsorship</li>
             <li>Do you wanna contribute to my future life? <b>Hire Me!</b></li>
           </ul>
         </div>

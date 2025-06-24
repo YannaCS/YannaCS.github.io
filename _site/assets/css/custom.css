@@ -518,3 +518,26 @@ main {
   display: inline-block;
   max-width: 100%;
 }
+
+/* Hint */
+.hint {
+  background: #f8f9fa;
+  /*border-left: 4px solid #007bff;*/
+  padding: 10px 15px;
+  margin: 20px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: small;
+  width: max-content;
+}
+
+.hint-icon {
+  font-size: 1.2em;
+}
+
+.hint-text {
+  color: #555;
+  font-style: italic;
+}
