@@ -221,55 +221,1108 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 
 
-  <h2 id="skills">Skills</h2>
+  <style>
+/* Timeline Styles */
+.timeline-container {
+  max-width: 1400px;
+  margin: 60px auto;
+  position: relative;
+  padding: 0 60px;
+}
 
-<ul>
-  <li><strong>Certification:</strong> Tableau Certified Data Analyst</li>
-  <li><strong>Certificate:</strong> AI Literacy, Graduate Leadership, DA on AWS, Applied AI</li>
-  <li><strong>Programming Languages:</strong> Python, SQL(MySQL, NoSQL, MongoDB), C, C++, JAVA, JSP, MATLAB, Shell, MIPS</li>
-  <li><strong>Technologies:</strong> Data Cleaning, Data Analytics, Data Mining, Data Processing, Data Pipeline, ETL, Data Ingestion, Data Warehouse, Data Storage, Database Design, Database Normalization, Pandas, Numpy, Scikit-Learn, Matplotlib, Time
-Series Analysis, Text Analysis, Sentiment Analysis, Clustering(K-Means, KNN), Feature Selection, Feature Engineering, Principal Component Analysis(PCA), t-SNE, TensorFlow, Anaconda, pip, Machine Learning(ML), CV, NLP, Tableau,Streamlit, UML, MS Oﬃce, Excel, AWS, GenAI, BigQuery, Spark, Kafka, html, Linear Optimization</li>
-</ul>
+/* Central line */
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: calc(100% + 20px); /* Extend the line to reach the Future node */
+  background: linear-gradient(to bottom, #4fb1ba, #4f8ef7);
+  top: -20px;
+}
 
-<h2 id="experience">Experience</h2>
+/* Timeline item */
+.timeline-item {
+  position: relative;
+  width: 100%;
+  margin-bottom: -50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  min-height: 200px;
+}
 
-<ul>
-  <li>
-    <p><strong>Data Engineer Intern</strong> | Uplift Northwest (June - Sept. 2024)<br />
-Optimized database schemas, built ETL pipelines, and developed interactive Tableau dashboards with drill-down capabilities. Created ML predictive models for client outcomes with scikit-learn.</p>
-  </li>
-  <li>
-    <p><strong>Data Analyst</strong> | Zhejiang Earthview Image Inc. (Sept. 2020 - May 2022)<br />
-Developed processing pipelines for terabytes of satellite imagery, created computer vision models achieving 87% classification accuracy, and contributed to an award-winning environmental monitoring project.</p>
-  </li>
-  <li>
-    <p><strong>Data Science Researcher</strong> | Financial Fraud Analytics Research (Feb. - Aug. 2020)<br />
-Engineered features from one million financial transactions, optimized Gradient Boosting models achieving 99.07% classification accuracy, and published <a href="https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ">findings in IEEE conference proceedings</a>.</p>
-  </li>
-</ul>
+/* Alternating sides */
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
 
-<h2 id="education">Education</h2>
+/* Content box */
+.timeline-content {
+  width: 500px;
+  max-width: 45%;
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  overflow: hidden; /* Prevent content overflow */
+}
 
-<ul>
-  <li>
-    <p><strong>Master of Science in Data Analytics Engineering (GPA: 3.96/4.00)</strong> (Sept. 2023 - May 2025)<br />
-Northeastern University, Seattle, WA</p>
-  </li>
-  <li>
-    <p><strong>Bachelor of Engineering in Computer Science and Technology (Honors)</strong> (Sept. 2017 - Aug. 2021)<br />
-Xiamen University, Malaysia</p>
-  </li>
-</ul>
+/* Flip container */
+.timeline-flip-container {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  min-height: inherit; /* Inherit from parent */
+}
 
-<h2 id="personal-life">Personal Life</h2>
+/* Flip state */
+.timeline-content.flipped {
+  overflow: hidden;
+  border-radius: 10px; /* Maintain border radius */
+}
+.timeline-content.flipped .timeline-flip-container {
+  transform: rotateY(180deg);
+}
 
-<p>Beyond the world of data and code, I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures. When indoors, I’m often immersed in books that expand my horizons—from data science literature to thought-provoking fiction. I’m also an enthusiastic League of Legends player, where strategic thinking and teamwork offer a different kind of problem-solving challenge. In my kitchen, you’ll find me experimenting with baking techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</p>
 
-<p>My constant companion on life’s adventures is my beloved dog, Wangwang Shen, who made the incredible journey with me from China to the USA. Having navigated international travel together, we now spend our days exploring neighborhoods and parks. Wangwang’s curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, no matter how busy life gets.</p>
+/* Front and back faces */
+.timeline-front,
+.timeline-back {
+  width: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #f8f9fa;
+  padding: 25px 35px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+}
+
+/* Front face */
+.timeline-front {
+  position: relative;
+}
+
+/* Back face */
+.timeline-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: rotateY(180deg);
+  min-height: 100%;
+  max-height: 100%; /* Limit to parent height */
+  overflow-y: auto; /* Add scrolling for long content */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  word-wrap: break-word;
+  word-break: break-word;
+  z-index: 2; /* Add this to place content above the timeline line */
+  background: #f8f9fa; /* Ensure solid background */
+}
+/* Optional: Style the scrollbar */
+.timeline-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.timeline-back::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.timeline-back::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.timeline-back::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* scrollbar end*/
+
+/* Adjust h3 title spacing */
+.timeline-back h3 {
+  margin-top: 0;
+  padding-right: 40px; /* Make room for close button */
+  font-size: 1em;
+}
+
+/* Hover effects */
+.timeline-content:hover .timeline-flip-container {
+  transform: translateY(-5px);
+}
+
+.timeline-content.flipped:hover .timeline-flip-container {
+  transform: rotateY(180deg) translateY(-5px);
+}
+
+/* Add border highlight */
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.timeline-content:hover::before {
+  border-color: #4fb1ba;
+}
+
+/* Bullet list inside timeline */
+.timeline-bullets {
+  margin: 10px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.timeline-bullets li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  /*color: #555;*/
+  line-height: 1.4;
+}
+
+.timeline-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  /*color: #4fb1ba;*/
+  font-weight: bold;
+  font-size: 0.9em; /*1.2*/
+}
+
+/* Subtle animation for bullets on hover */
+.timeline-content:hover .timeline-bullets li {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+/* Click indicator */
+.timeline-click-hint {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  font-size: 0.8em;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timeline-click-hint::before {
+  content: "🔄";
+  font-size: 1em;
+}
+
+/* Back button */
+.timeline-back-btn {
+  position: absolute;
+  top: 15px;  /*20px*/
+  right: 10px;  /*35px*/
+  background: #4fb1ba;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8em;
+  z-index: 10;
+}
+
+.timeline-back-btn:hover {
+  background: #3a8a92;
+}
+
+/* Details section styling */
+.timeline-details {
+  margin-top: 1px;
+  padding-bottom: 20px; /* Add bottom padding */
+  font-size: 0.9em;
+}
+
+.timeline-details h4 {
+  color: #2c3e50;
+  margin-bottom: 2px;
+  margin-top: 2px; /* Add specific top margin */
+  font-size: 0.9em;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+/* First h4 should have less space */
+.timeline-details h4:first-child {
+  margin-top: 1px; /* Much less space for the first h4 */
+}
+/* Ensure lists don't overflow */
+.timeline-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0; /* Add bottom margin between sections */
+}
+
+.timeline-details li {
+  padding-left: 20px;
+  padding-right: 10px; /* Add right padding */
+  position: relative;
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 0.9em;
+  word-wrap: break-word; /* Force word breaking */
+  word-break: break-word; /* Better browser support */
+  hyphens: auto; /* Allow hyphenation */
+  line-height: 1.5; /* Better line spacing */
+}
+
+.timeline-details li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #4fb1ba;
+}
+/* Regular text (like "plz view...") */
+.timeline-details p,
+.timeline-details div {
+  font-size: 0.8em; /* Add this for non-list text */
+  line-height: 1.4;
+}
+
+/* Arrow pointing to timeline */
+.timeline-item:nth-child(even) .timeline-front::after,
+.timeline-item:nth-child(even) .timeline-back::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  border-color: transparent transparent transparent #f8f9fa;
+}
+
+.timeline-item:nth-child(odd) .timeline-front::after,
+.timeline-item:nth-child(odd) .timeline-back::after {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 15px 15px 0;
+  border-color: transparent #f8f9fa transparent transparent;
+}
+
+/* Make the entire timeline item interactive */
+.timeline-item:hover .timeline-content .timeline-meta .company a {
+  color: #2d7a84;
+}
+
+/* Timeline node */
+.timeline-node {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border: 4px solid #4fb1ba;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.timeline-node:hover {
+  transform: translateX(-50%) scale(1.2);
+  border-color: #4f8ef7;
+}
+
+/* Enhance node on content hover */
+.timeline-item:hover .timeline-node {
+  transform: translateX(-50%) scale(1.2);
+  box-shadow: 0 0 20px rgba(79, 177, 186, 0.4);
+}
+
+/* Different colors for each node */
+/*
+.timeline-item:nth-child(1) .timeline-node { border-color: #4fb1ba; }
+.timeline-item:nth-child(2) .timeline-node { border-color: #f39c12; }
+.timeline-item:nth-child(3) .timeline-node { border-color: #e74c3c; }
+.timeline-item:nth-child(4) .timeline-node { border-color: #9b59b6; }
+.timeline-item:nth-child(5) .timeline-node { border-color: #3498db; }
+.timeline-item:nth-child(6) .timeline-node { border-color: #2ecc71; }
+*/
+/* Dynamic color matching based on year color */
+.timeline-item .timeline-node {
+  /* Border color will be set dynamically */
+}
+
+/* Year label */
+.timeline-year {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Milestone title */
+.timeline-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+/* Brighten colors on hover */
+.timeline-item:hover .timeline-year {
+  filter: brightness(1.1);
+}
+
+.timeline-item:hover .timeline-title {
+  color: #4fb1ba;
+}
+
+/* Company and Location in one line*/
+/* Meta line with company and location */
+.timeline-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+
+.timeline-meta .company {
+  font-weight: 600;
+}
+
+.timeline-meta .company a {
+  color: #4fb1ba;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.timeline-meta .company a:hover {
+  color: #3a8a92;
+  text-decoration: underline;
+}
+
+.timeline-meta .separator {
+  color: #bdc3c7;
+  font-size: 0.85em;
+}
+
+.timeline-meta .location {
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.timeline-meta .location::before {
+  content: "📍";
+  font-size: 0.85em;
+}
+/* Company and Location - END*/
+
+/* Description */
+.timeline-description {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.9em;
+}
+
+/* Icons */
+.timeline-icon {
+  font-size: 20px;
+  color: white;
+}
+/* Make icons white for better contrast on colored backgrounds */
+.timeline-node .timeline-icon {
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.2));
+}
+
+/* Start and Finish markers */
+.timeline-marker {
+  background: #2c3e50;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin: 30px auto;
+  width: fit-content;
+}
+/* Make sure the PRESENT marker has proper spacing */
+.timeline-marker:first-of-type {
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+/* No flip class - removes cursor and prevents flip */
+.timeline-content.no-flip {
+  cursor: default;
+}
+
+/* Remove hover effects for no-flip items */
+.timeline-content.no-flip:hover .timeline-flip-container {
+  transform: none;
+}
+
+.timeline-content.no-flip:hover::before {
+  border-color: transparent;
+}
+
+/* Optional: Add a visual indicator that it's not clickable */
+.timeline-content.no-flip .timeline-description {
+  padding-bottom: 15px; /* Add some bottom padding since no click hint */
+}
+
+/* Special styling for Future item */
+.timeline-item:first-child {
+  margin-top: -30px; /* Pull the item up */
+}
+.timeline-item:first-child .timeline-node {
+  border-color: #92B8BE;
+  background: #92B8BE;
+  color: white;
+  top: -20px; /* Position node at the start of the line */
+}
+
+.timeline-item:first-child .timeline-content {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e8f5e9 100%);
+}
+
+/* Optional: Add a subtle animation to the future node */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+.timeline-item:first-child .timeline-node {
+  animation: pulse 2s infinite;
+}
+/* For the Future item specifically (green) */
+.timeline-year[style*="color: #92B8BE"] ~ * ~ * .timeline-node,
+.timeline-year[style*="color: #92B8BE"] ~ * ~ * ~ .timeline-node {
+  border-color: #92B8BE !important;
+}
+/* Skill Grid */
+.skill-grid {
+  margin-top: 0px !important; /* Reduce from 40px */
+}
+.skill-category {
+  padding: 15px 20px; /* Add padding inside each card */
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  background: #f8f9fa; /* Light background */
+}
+
+.skill-category:hover {
+  transform: translateY(-3px);
+  background: rgba(0,0,0,0.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+/* Reduce heading size and margin */
+.skill-category h3 {
+  font-size: 1em; /* Smaller heading */
+  margin-bottom: 10px; /* Less space after heading */
+  margin-top: 0;
+}
+
+/* Make list more compact */
+.skill-category ul {
+  margin: 0;
+  padding-left: 20px; /* Less indent */
+  list-style-type: disc; /* Add bullets */
+}
+
+.skill-category li {
+  margin-bottom: 4px; /* Less space between items */
+  font-size: 0.9em; /* Slightly smaller text */
+}
+
+/* Style for emphasis - Make the "HIRE ME!" more prominent */
+strong:contains("HIRE ME") {
+  color: #e74c3c;
+  font-size: 1.1em;
+}
+
+/* Responsive design */
+/* Large screens */
+@media (max-width: 1400px) and (min-width: 969px) {
+  .timeline-content {
+    width: 400px;
+    max-width: 42%;
+  }
+  
+  .timeline-container {
+    padding: 0 40px;
+  }
+}
+
+/* Tablet/half-screen */
+@media (max-width: 968px) and (min-width: 600px) {
+  .timeline-content {
+    width: 350px;
+    max-width: 40%;
+  }
+  
+  .timeline-container {
+    padding: 0 30px;
+  }
+  
+  /* Reduce font sizes slightly */
+  .timeline-title {
+    font-size: 1em;
+  }
+  
+  .timeline-description {
+    font-size: 0.9em;
+  }
+  
+  .timeline-details li {
+    font-size: 0.9em;
+  }
+  
+  /* Adjust padding */
+  .timeline-front,
+  .timeline-back {
+    padding: 20px 25px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 599px) {
+  .timeline-container {
+    padding: 0 20px;
+  }
+  
+  .timeline-container::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 80px);
+    max-width: none;
+    margin-left: 80px;
+  }
+  
+  .timeline-node {
+    left: 30px;
+  }
+  
+  .timeline-front::after,
+  .timeline-back::after {
+    display: none;
+  }
+}
+</style>
+
+<!-- Time line items -->
+<h2 id="heres-where-i-am-presently-and-where-im-headed">Here’s where I am presently, and where I’m headed</h2>
+<p>Click cards for details
+<!-- <div class="timeline-marker">PRESENT</div> --></p>
+<div class="timeline-container">
+
+  <!-- Future -->
+  <div class="timeline-item">
+  <div class="timeline-content no-flip">
+    <div class="timeline-flip-container">
+      <div class="timeline-front">
+        <div class="timeline-year" style="color: #92B8BE;">Future</div>
+        <div class="timeline-title">Tech Related Roles</div>
+        <div class="timeline-meta">
+          <span class="company">Open to Sponsorship</span>
+          <span class="location">Open to Relocation</span>
+        </div>
+        <div class="timeline-description">
+          <ul class="timeline-bullets">
+            <li>3-Years OPT (STEM qualified)</li>
+            <li>I can bring you <b>more profits</b> than a lot people who don't need sponsorship</li>
+            <li>Do you wanna contribute to my future life? <b>Hire Me!</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="timeline-node" style="border-color: #92B8BE; background-color: #92B8BE;">
+    <span class="timeline-icon">📈</span>
+  </div>
+</div>
+
+  <!-- NEU -->
+  <div class="timeline-item">
+    <div class="timeline-content" onclick="flipCard(this)">
+      <div class="timeline-flip-container">
+        <!-- Front Face -->
+        <div class="timeline-front">
+          <div class="timeline-year" style="color: #DD848C;">May 2025</div>
+          <div class="timeline-title">Master of Science in Data Analytics</div>
+          <div class="timeline-meta">
+            <span class="company"><a href="https://www.northeastern.edu/" target="_blank" onclick="event.stopPropagation();">Northeastern University</a></span>
+            <span class="location">Seattle, WA</span>
+          </div>
+          <div class="timeline-description">
+            <ul class="timeline-bullets">
+              <li>Graduated with GPA 3.96/4.0</li>
+              <li>Focus on: Data Science, Data Engineering, ML/AI, Cloud Computing, Database, Algorithms</li>
+              <li>Certified: Tableau Data Analyst, AWS, Applied AI</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Back Face -->
+        <div class="timeline-back">
+          <button class="timeline-back-btn" onclick="flipCard(this.closest('.timeline-content')); event.stopPropagation();">✕</button>
+          <div class="timeline-details">
+            <h4>Time Range</h4>
+              Sept. 2023 - May 2025
+            <h4>Projects</h4>
+              Please view <a href="https://yannacs.github.io/projects/" target="_blank" onclick="event.stopPropagation();">Projects Page</a>
+            <h4>Relevant Coursework</h4>
+              <ul>
+                <li>Data Analytics Engineering</li>
+                <li>Deterministic Operations Research</li>
+                <li>Data Mining</li>
+                <li>Data Management and Database Design</li>
+                <li>Visualization for Analytics</li>
+                <li>Cloud Computing</li>
+                <li>Data Structure</li>
+                <li>Algorithms</li>
+                <li>Statistic</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-node" style="border-color: #DD848C; background-color: #DDB4AB;">
+      <span class="timeline-icon">👩🏻‍🎓</span>
+    </div>
+  </div>
+
+  <!-- Uplift Northwest -->
+  <div class="timeline-item">
+    <div class="timeline-content" onclick="flipCard(this)">
+      <div class="timeline-flip-container">
+        <!-- Front Face -->
+        <div class="timeline-front">
+          <div class="timeline-year" style="color: #81C59D;">June - Sept. 2024</div>
+          <div class="timeline-title">Data Engineer Intern (Full Stack)</div>
+          <div class="timeline-meta">
+            <span class="company"><a href="https://www.linkedin.com/company/upliftnorthwest/posts/?feedView=all" target="_blank" onclick="event.stopPropagation();">Uplift Northwest</a></span>
+            <span class="location">Seattle, WA</span>
+          </div>
+          <div class="timeline-description">
+            <ul class="timeline-bullets">
+              <li>Unified data systems via ETL pipelines and warehouse modeling.</li> 
+              <li>Built Tableau dashboards and predictive models to drive business insights.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Back Face -->
+        <div class="timeline-back">
+          <button class="timeline-back-btn" onclick="flipCard(this.closest('.timeline-content')); event.stopPropagation();">✕</button>
+          <div class="timeline-details">
+            <h4>Key Achievements:</h4>
+            <ul>
+              <li>Streamlined data quality monitoring and reporting, cutting manual workload by 25% and improving reliability</li>
+              <li>Audited and optimized database schemas by resolving normalization issues and improving data design</li>
+              <li>Designed and deployed ETL pipelines to unify disparate data sources into a centralized warehouse</li>
+              <li>Built interactive Tableau dashboards with drill-down views to visualize key performance indicators</li>
+              <li>Developed ML models to predict client outcomes, using feature engineering and scikit-learn for performance gains</li>
+              <li>Automated routine data validation processes, boosting consistency and operational efficiency</li>
+            </ul>
+            
+            <h4>Technical Stack:</h4>
+            <ul>
+              <li>ETL: Apache Airflow, Python, SQL</li>
+              <li>Visualization: Tableau</li>
+              <li>ML: Scikit-learn, TensorFlow</li>
+              <li>Database: MySQL, Salesforce, StarUML</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-node" style="border-color: #81C59D; background-color: #B4C5B8;">
+      <span class="timeline-icon">🚀</span>
+    </div>
+  </div>
+
+  <!-- Zhejiang Earthview -->
+  <div class="timeline-item">
+    <div class="timeline-content" onclick="flipCard(this)">
+      <div class="timeline-flip-container">
+        <!-- Front Face -->
+        <div class="timeline-front">
+          <div class="timeline-year" style="color: #60AED3;">Sept. 2020 - May 2022</div>
+          <div class="timeline-title">Data Analyst</div>
+          <div class="timeline-meta">
+            <span class="company"><a href="https://www.ev-image.com/" target="_blank" onclick="event.stopPropagation();">Zhejiang Earthview Image Inc.</a></span>
+            <span class="location">China</span>
+          </div>
+          <div class="timeline-description">
+            <ul class="timeline-bullets">
+              <li>Built ETL pipeline for satellite data (TB-scale) </li> 
+              <li>Trained CV models (87% accuracy) for rural condition detection </li>
+              <li>Contributed to ML project recognized in national competition</li>
+            </ul>
+          </div>
+          <!-- <div class="timeline-click-hint">Click for details</div> -->
+        </div>
+        
+        <!-- Back Face -->
+        <div class="timeline-back">
+          <button class="timeline-back-btn" onclick="flipCard(this.closest('.timeline-content')); event.stopPropagation();">✕</button>  
+          <div class="timeline-details">
+            <h4>Key Achievements:</h4>
+            <ul>
+              <li>Built computer vision models to detect rural environmental conditions, achieving 87% classification accuracy</li>
+              <li>Designed and executed A/B tests to evaluate platform features and analyze user engagement</li>
+              <li>Performed statistical analysis on usage data to uncover drivers of user retention and feature adoption</li>
+              <li>Contributed to a nationally recognized ML project for environmental monitoring and policy insights</li>
+            </ul>
+            
+            <h4>Technical Stack:</h4>
+            <ul>
+              <li>Data Analysis: Excel(VBA, PivotTable, Aggregate Function), Python(Pandas, Seaborn, Matplotlib), SQL, A/B Testing</li>
+              <li>Computer Vision: OpenCV, TensorFlow, PyTorch</li>
+              <li>Project Management: Microsoft(Teams, Project)</li>
+              <li>Languages: Python, SQL, HTML</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-node" style="border-color: #60AED3; background-color: #ACCFD3;">
+      <span class="timeline-icon">📊</span>
+    </div>
+  </div>
+
+  <!-- XMU -->
+  <div class="timeline-item">
+    <div class="timeline-content" onclick="flipCard(this)">
+      <div class="timeline-flip-container">
+        <!-- Front Face -->
+        <div class="timeline-front">
+          <div class="timeline-year" style="color: #506076;">Aug. 2021</div>
+          <div class="timeline-title">Bachelor of Engineering in Computer Science and Technology</div>
+          <div class="timeline-meta">
+            <span class="company"><a href="https://www.xmu.edu.my/" target="_blank" onclick="event.stopPropagation();">Xiamen University</a></span>
+            <span class="location">Malaysia</span>
+          </div>
+          <div class="timeline-description">
+            Graduated with <b>Honors</b>.
+          </div>
+          <!-- <div class="timeline-click-hint">Click for details</div> -->
+        </div>
+        
+        <!-- Back Face -->
+        <div class="timeline-back">
+          <button class="timeline-back-btn" onclick="flipCard(this.closest('.timeline-content')); event.stopPropagation();">✕</button>
+          <!-- <h3 style="color: #e74c3c; margin-bottom: 15px;">Academic Excellence</h3> -->
+          
+          <div class="timeline-details">
+            <h4>Achievements:</h4>
+            <ul>
+              <li>Top 10% for all semesters</li>
+              <li>President of Youth Leader Club</li>
+              <li>3 Entrepreneurship Competition Top Awards</li>
+              <li>Published research on fraud detection</li>
+              <li>Maintained A's in all mathematics courses</li>
+            </ul>
+            
+            <h4>Core Competencies:</h4>
+            <ul>
+              <li>Data Structures &amp; Algorithms</li>
+              <li>Database Management Systems</li>
+              <li>Machine Learning &amp; AI</li>
+              <li>Software Engineering</li>
+              <li>Computer Architecture &amp; Networks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-node" style="border-color: #506076; background-color: #7C96BB;">
+      <span class="timeline-icon">🎓</span>
+    </div>
+  </div>
+
+  <!-- Fraud Detection -->
+  <div class="timeline-item">
+    <div class="timeline-content" onclick="flipCard(this)">
+      <div class="timeline-flip-container">
+        <!-- Front Face -->
+        <div class="timeline-front">
+          <div class="timeline-year" style="color: #EEA53A;">Feb. - Aug. 2020</div>
+          <div class="timeline-title">Data Science Researcher</div>
+          <div class="timeline-meta">
+            <span class="company">Prof. Stephen Coggeshall's Research Group</span>
+            <span class="location">Online</span>
+          </div>
+          <div class="timeline-description">
+            <ul class="timeline-bullets">
+              <li>Built fraud detection model (99.07% accuracy, 1M+ txns) </li> 
+              <li>Engineered features &amp; validated via out-of-time testing </li>
+              <li>Published in MLBDBI 2020 <a href="https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ" target="_blank" onclick="event.stopPropagation();">(DOI: 10.1109/MLBDBI51377.2020.00025)</a></li>
+            </ul>
+          </div>
+          <!-- <div class="timeline-click-hint">Click for details</div> -->
+        </div>
+        
+        <!-- Back Face -->
+        <div class="timeline-back">
+          <button class="timeline-back-btn" onclick="flipCard(this.closest('.timeline-content')); event.stopPropagation();">✕</button>
+          
+          <div class="timeline-details">
+            <h4>Key Achievements:</h4>
+            <ul>
+              <li>Cleaned and transformed 1M+ financial transactions, resolving missing values and outliers</li>
+              <li>Engineered features using statistical methods (SelectKBest) and ROC-AUC–driven selection</li>
+              <li>Applied out-of-time validation to simulate real-world fraud model deployment</li>
+              <li>Optimized Different Decision Tree models (GBDT, LightGBM, XGBoost) with Bayesian hyperparameter tuning, reaching 99.07% accuracy</li>
+              <li>Published research methodology and results in IEEE conference proceedings (DOI: 10.1109/MLBDBI51377.2020.00025)</li>
+            </ul>
+            
+            <h4>Updated Project Details:</h4>
+            Plz view <a href="https://yannacs.github.io/projects/fraud%20detection/" target="_blank" onclick="event.stopPropagation();">Projects Page</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-node" style="border-color: #EEA53A; background-color: #F6CE94;">
+      <span class="timeline-icon">🤖</span>
+    </div>
+  </div>
+  <!-- END ITEMS -->
+</div>
+
+<div class="timeline-marker">START</div>
+
+<h2 id="skills--expertise">Skills &amp; Expertise</h2>
+<div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 1px;">
+
+  <div class="skill-category">
+    <h3 style="color: #2ecc71;">Certifications &amp; Certificates</h3>
+    <ul>
+      <li>Tableau Certified Data Analyst</li>
+      <li>AI Literacy Certificate</li>
+      <li>Graduate Leadership Certificate</li>
+      <li>Data Analytics on AWS</li>
+      <li>Applied AI Certificate</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #9b59b6;">Programming Languages</h3>
+    <ul>
+      <li>Python (Advanced)</li>
+      <li>SQL (MySQL, NoSQL)</li>
+      <li>Java &amp; JSP</li>
+      <li>C/C++</li>
+      <li>MATLAB</li>
+      <li>Shell Scripting</li>
+      <li>MIPS Assembly</li>
+      <li>HTML</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #34495e;">Software Engineering</h3>
+    <ul>
+      <li>Data Structures</li>
+      <li>Algorithms</li>
+      <li>Database Design</li>
+      <li>API Integration</li>
+      <li>Web Development</li>
+      <li>Security Best Practices</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #4fb1ba;">Data Engineering</h3>
+    <ul>
+      <li>ETL Pipeline Development</li>
+      <li>Database Design &amp; Normalization</li>
+      <li>Data Warehousing</li>
+      <li>Data Cleaning &amp; Processing</li>
+      <li>Data Ingestion &amp; Storage</li>
+      <li>Apache Spark &amp; Kafka</li>
+      <li>BigQuery</li>
+    </ul>
+  </div>
+  
+  <div class="skill-category">
+    <h3 style="color: #f39c12;">Machine Learning &amp; AI</h3>
+    <ul>
+      <li>TensorFlow</li>
+      <li>Scikit-learn</li>
+      <li>NLP &amp; Computer Vision</li>
+      <li>Predictive Modeling</li>
+      <li>Feature Engineering</li>
+      <li>Time Series Analysis</li>
+      <li>Clustering (K-Means, KNN)</li>
+      <li>PCA &amp; t-SNE</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #e67e22;">Analytics &amp; Statistics</h3>
+    <ul>
+      <li>Statistical Analysis</li>
+      <li>A/B Testing</li>
+      <li>Sentiment Analysis</li>
+      <li>Text Analysis</li>
+      <li>Operations Research</li>
+      <li>Linear Optimization</li>
+      <li>Data Mining</li>
+    </ul>
+  </div>
+  
+  <div class="skill-category">
+    <h3 style="color: #e74c3c;">Data Visualization</h3>
+    <ul>
+      <li>Tableau (Certified Data Analyst)</li>
+      <li>Matplotlib</li>
+      <li>Plotly</li>
+      <li>Streamlit</li>
+      <li>Dashboard Design</li>
+      <li>Interactive Visualizations</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #3498db;">Databases &amp; Big Data</h3>
+    <ul>
+      <li>MySQL</li>
+      <li>MongoDB</li>
+      <li>NoSQL Databases</li>
+      <li>Database Normalization</li>
+      <li>Query Optimization</li>
+      <li>Big Data Processing</li>
+      <li>Data Warehouse Design</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #16a085;">Cloud &amp; DevOps</h3>
+    <ul>
+      <li>AWS Cloud Services</li>
+      <li>Cloud Computing</li>
+      <li>Git Version Control</li>
+      <li>Automated Pipelines</li>
+      <li>Data Quality Monitoring</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #8e44ad;">Python Libraries</h3>
+    <ul>
+      <li>Pandas</li>
+      <li>NumPy</li>
+      <li>Scikit-Learn</li>
+      <li>TensorFlow</li>
+      <li>Matplotlib</li>
+      <li>Anaconda</li>
+      <li>pip</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #c0392b;">Business Tools</h3>
+    <ul>
+      <li>MS Office Suite</li>
+      <li>Excel (Advanced)</li>
+      <li>UML Modeling</li>
+      <li>Project Management</li>
+      <li>Technical Documentation</li>
+    </ul>
+  </div>
+
+  <div class="skill-category">
+    <h3 style="color: #27ae60;">Specialized Skills</h3>
+    <ul>
+      <li>Geospatial Data Analysis</li>
+      <li>Financial Fraud Detection</li>
+      <li>Healthcare Analytics</li>
+      <li>Remote Sensing</li>
+      <li>OpenCV</li>
+      <li>GenAI Applications</li>
+    </ul>
+  </div>
+
+</div>
+
+<h2 id="what-else">What Else</h2>
+
+<p>Beyond the world of data and code, I enjoy exploring beautiful trails🏔️, finding tranquility and perspective on weekend hiking adventures. When indoors, I’m often immersed in books📚 that expand my horizons—from data science literature to thought-provoking fiction. I’m also an enthusiastic League of Legends🎮 player, where strategic thinking and teamwork👥 offer a different kind of problem-solving challenge. In my kitchen, you’ll find me experimenting with baking🍰 techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</p>
+
+<p>My constant companion on life’s adventures is my beloved dog🐕, Wangwang Shen(沈旺旺), who made the incredible journey with me from China ✈️ to the USA. Having navigated international travel together, we now spend our days exploring neighborhoods and parks🛝. Wangwang’s curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, no matter how busy life gets.</p>
+
+<p>We really enjoy the US’s friendly pet-environment and appreciate people saying “Your dog is so cute”. To help us stay, <strong>HIRE ME!</strong></p>
 
 <h2 id="contact">Contact</h2>
 
-<p>Feel free to reach out to me at <a href="mailto:yanna.cshen@gmail.com">yanna.cshen@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/chengyang-shen">LinkedIn</a> and <a href="https://github.com/YannisCS">GitHub</a>.</p>
+<p>Feel free to reach out to me at <a href="mailto:yanna.cshen@gmail.com">yanna.cshen@gmail.com</a> or connect with me on <a href="https://www.linkedin.com/in/chengyang-shen">LinkedIn</a> and <a href="https://github.com/YannisCS">GitHub</a>. You can also access to the above link and <strong>download my resume</strong> from side bar.</p>
+
+<p>I’m here to help transform your data into <strong>valuable insights and profit!</strong></p>
+
+<script>
+function flipCard(element) {
+  // Check if element has no-flip class
+  if (element.classList.contains('no-flip')) {
+    return; // Exit without flipping
+  }
+  
+  // Toggle flipped class
+  element.classList.toggle('flipped');
+  
+  // Optional: Close other flipped cards
+  document.querySelectorAll('.timeline-content').forEach(item => {
+    if (item !== element && item.classList.contains('flipped')) {
+      item.classList.remove('flipped');
+    }
+  });
+}
+</script>
+
 
 </article>
 

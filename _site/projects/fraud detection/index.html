@@ -176,7 +176,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 <hy-push-state>
   <main
     id="_main"
-    class="content fade-in layout-project"
+    class="content fade-in layout-project-grid"
     role="main"
     data-color="#4fb1ba"
     data-theme-color=""
@@ -185,34 +185,224 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       data-overlay
     
     >
-    <article class="project" role="article">
-  <h1 class="page-title">Fraud Detection by Machine Learning</h1>
+    <article class="project project-grid-layout" role="article">
+  <style>
+    /* Custom styles for this specific layout */
+    .project-grid-layout {
+      padding: 1rem !important;
+      height: calc(100vh - 2rem);
+      overflow: hidden;
+    }
+    
+    .project-split-container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      max-width: 100%;
+      margin: 0;
+      position: relative;
+    }
+    
+    /* Resizable divider */
+    .resize-handle {
+      width: 10px;
+      height: 100%;
+      background: #e0e0e0;
+      cursor: col-resize;
+      position: relative;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    
+    .resize-handle:hover {
+      background: #bbb;
+    }
+    
+    .resize-handle::before {
+      content: '⋮⋮⋮';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      color: #666;
+      font-size: 12px;
+      letter-spacing: -2px;
+    }
+    
+    /* Left side - scrollable text */
+    .left-panel {
+      overflow-y: auto;
+      padding-right: 1rem;
+      height: 100%;
+      width: 33.33%;
+      flex-shrink: 0;
+    }
+    
+    /* Custom scrollbar for left panel */
+    .left-panel::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .left-panel::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    .left-panel::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    
+    .left-panel::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    
+    /* Title styling */
+    .grid-title h1 {
+      margin: 0 0 2rem 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #333;
+    }
+    
+    /* Description section */
+    .grid-description {
+      margin-bottom: 3rem;
+    }
+    
+    .grid-description ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    
+    .grid-description ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .grid-description ul li:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Content styling */
+    .grid-content {
+      margin-top: 2rem;
+    }
+    
+    .grid-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Right side - fixed images */
+    .right-panel {
+      overflow-y: auto;
+      height: 100%;
+      padding-left: 1rem;
+      flex: 1;
+    }
+    
+    /* Main screenshot */
+    .main-screenshot {
+      margin-bottom: 2rem;
+    }
+    
+    .main-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Additional plots */
+    .plot-item {
+      margin-bottom: 2rem;
+    }
+    
+    .plot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .plot-item .plot-caption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    /* Links styling */
+    .project-links {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    /* Responsive design - stack on mobile */
+    @media (max-width: 768px) {
+      .project-grid-layout {
+        height: auto;
+        overflow: visible;
+      }
+      
+      .project-split-container {
+        flex-direction: column;
+        height: auto;
+      }
+      
+      .left-panel {
+        overflow: visible;
+        height: auto;
+        padding-right: 0;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      
+      .right-panel {
+        overflow: visible;
+        height: auto;
+        padding-left: 0;
+        width: 100%;
+      }
+      
+      .resize-handle {
+        display: none;
+      }
+    }
+    
+    /* When sidebar is visible on desktop */
+    @media (min-width: 64em) {
+      body:not(.no-drawer) .project-grid-layout {
+        margin-left: 21rem;
+        width: calc(100% - 21rem) !important;
+        padding: 1rem !important;
+      }
+    }
+  </style>
   
-  <!-- Two-column header section -->
-  <div class="project-header">
-    <!-- Left column: Description -->
-    <div class="project-description">
-      <p>A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.</p>
+  <div class="project-split-container" id="split-container">
+    <!-- Left Panel - Scrollable Text -->
+    <div class="left-panel" id="left-panel">
+      <!-- Title Section -->
+      <div class="grid-title">
+        <h1>Fraud Detection by Machine Learning</h1>
+      </div>
+      
+      <!-- Description Section -->
+      <div class="grid-description">
+        <p>A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.</p>
 
-    </div>
-    
-    <!-- Right column: Screenshot -->
-    
-    <div class="project-screenshot">
-      <img 
-        src="/assets/img/projects/poster1.png" 
-        alt="Fraud Detection by Machine Learning"
-        
-      />
-    </div>
-    
-  </div>
-
-  <!-- Full width content section -->
-  <div class="project-content">
-    <h2 id="project-details">Project Details</h2>
-
-<p>Here’s more detailed information about it:</p>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="grid-content">
+        <h2 id="highlights">Highlights</h2>
 
 <ul>
   <li><strong>Complete ML Pipeline</strong>: End-to-end fraud detection system from raw data to production-ready model</li>
@@ -240,21 +430,191 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     </ul>
   </li>
   <li><strong>Real-time Performance</strong>: Sub-50ms prediction latency suitable for production deployment</li>
+  <li><strong>Huge Dataset Processing</strong>: To deal with <strong>One Million</strong> records, optimized data types and used efficient tech, such as SQL-based Approach with DuckDB, parallel execution, etc.</li>
 </ul>
 
 <h3 id="key-achievements">Key Achievements</h3>
-
 <ul>
   <li><strong>53.46% Fraud Detection Rate</strong>: Catches more than half fraudulent transactions</li>
-  <li><strong>&lt;0.5% False Positive Rate</strong>: Minimizes customer friction</li>
+  <li><strong>&lt;0.5% False Positive Rate ➕ &gt;51% True Positive Rate</strong>: Minimizes customer friction and maximizes detection accuracy</li>
+  <li><strong>99% Accuracy</strong>: Almost perfect, indicating excellent identification of non-fraud</li>
+  <li><strong>82-94% Precision</strong>: Most flagged cases are indeed fraud</li>
   <li><strong>0.76 AUC-ROC Score</strong>: Good model discrimination</li>
   <li><strong>Production Ready</strong>: Scalable architecture for real-world deployment</li>
 </ul>
 
-<p><img src="/assets/img/projects/poster2.png" alt="Baseline vs Optimized &amp; Optimized Models Performance Comparison" /> <br />
-<img src="/assets/img/projects/poster3.png" alt="XGBoost Evaluation" /></p>
+<h2 id="report">Report</h2>
+<p>(Please refer to the Jupyter Notebook available in the repository linked at the bottom of this page.)</p>
+<h3 id="eda">EDA</h3>
+<ol>
+  <li><strong>Application Volume</strong>
+    <ul>
+      <li>~2,700 daily applications with high volatility</li>
+      <li>~19,000 weekly applications (more stable)</li>
+      <li>Notable drops in late March and December</li>
+    </ul>
+  </li>
+  <li><strong>Fraud Indicators</strong>
+    <ul>
+      <li>1.45% overall fraud rate (14,283 of 981,694 transactions)</li>
+      <li>Peak fraud in July (1.68%), lowest in March (1.33%)</li>
+      <li>No weekend effect on fraud rates</li>
+    </ul>
+  </li>
+  <li><strong>Red Flags</strong>
+    <ul>
+      <li>One SSN used 10,000+ times</li>
+      <li>Phone “999999999” used ~10,000 times</li>
+      <li>Las Vegas addresses heavily concentrated</li>
+      <li>Clear synthetic identity fraud patterns</li>
+    </ul>
+  </li>
+  <li><strong>Temporal Patterns</strong>
+    <ul>
+      <li>Day 2 of each month shows high fraud</li>
+      <li>Mid-month periods (days 14-20) elevated risk</li>
+      <li>Summer months (Jun-Aug) have highest fraud activity</li>
+      <li>Wednesdays in July-August particularly vulnerable</li>
+    </ul>
+  </li>
+  <li><strong>Geographic Patterns</strong>
+    <ul>
+      <li>High fraud ZIP codes identified</li>
+      <li>ZIP code 41310 has highest fraud rate</li>
+      <li>Geographic clustering may be useful for modeling</li>
+      <li>Access the interactive map: <a href="/assets/img/projects/FraudDetection/1_fraud_rate_map.html">Fraud Rate Map</a></li>
+    </ul>
+  </li>
+  <li><strong>Recommendations</strong>
+    <ul>
+      <li>Implement real-time duplicate SSN detection</li>
+      <li>Block obvious fake phone numbers</li>
+      <li>Enhanced monitoring on day 2 of each month</li>
+      <li>Increase scrutiny during summer months</li>
+    </ul>
+  </li>
+</ol>
 
-<h3 id="technology-stack">Technology Stack</h3>
+<h3 id="feature-engineering">Feature Engineering</h3>
+<p>Expand the dataset from 9 features to 485 features, then reduced to 38 with filter and wrapper.</p>
+<ol>
+  <li><strong>Entity-Centric Features</strong>
+    <ul>
+      <li>Generated features by cross-linking key identity attributes (e.g., <code class="language-plaintext highlighter-rouge">ssn</code>, <code class="language-plaintext highlighter-rouge">dob</code>, <code class="language-plaintext highlighter-rouge">address</code>, <code class="language-plaintext highlighter-rouge">phone</code>, <code class="language-plaintext highlighter-rouge">name</code>)</li>
+      <li>Calculated frequency-based features across multiple rolling time windows (0, 1, 3, 7, 14, 30 days)</li>
+      <li>Introduced <code class="language-plaintext highlighter-rouge">*_day_since</code> features to capture recency of related activity</li>
+    </ul>
+  </li>
+  <li><strong>Temporal Risk Signals</strong>
+    <ul>
+      <li>Extracted day-of-week (<code class="language-plaintext highlighter-rouge">dow</code>) and mapped it to smoothed fraud rates (<code class="language-plaintext highlighter-rouge">dow_risk</code>)</li>
+      <li>Captured cyclical fraud behavior patterns while mitigating data sparsity</li>
+    </ul>
+  </li>
+  <li><strong>Composite Identity Construction</strong>
+    <ul>
+      <li>Created compound identifiers (e.g., <code class="language-plaintext highlighter-rouge">name_dob</code>, <code class="language-plaintext highlighter-rouge">name_fulladdress</code>, <code class="language-plaintext highlighter-rouge">ssn_name_homephone</code>)</li>
+      <li>Enhanced fraud signal strength by modeling identity reuse and synthetic combinations</li>
+    </ul>
+  </li>
+  <li><strong>Efficient Large-Scale Processing</strong>
+    <ul>
+      <li>Applied chunked processing and DuckDB SQL pipelines for fast, scalable computation</li>
+      <li>Reduced memory usage and execution time when engineering features for ~1 million records</li>
+    </ul>
+  </li>
+  <li><strong>Feature Selection and Ranking</strong>
+    <ul>
+      <li>Used KS statistics and Fraud Detection Rate (FDR) to rank 485+ features</li>
+      <li>Selected top 70 based on average ranking, then applied RFECV to retain <strong>38 optimal features</strong></li>
+      <li>Features were selected for both predictive power and interpretability</li>
+    </ul>
+  </li>
+  <li><strong>Dimensionality Reduction &amp; Model Readiness</strong>
+    <ul>
+      <li>PCA showed that <strong>5 components explained &gt;95% of variance</strong>, with stable AUC across 3–10 components</li>
+      <li>Random Forest + PCA cross-validation yielded AUC ≈ <strong>0.766</strong>, confirming robustness of engineered features</li>
+    </ul>
+  </li>
+  <li><strong>Standardization</strong>
+    <ul>
+      <li>Finally z-scaled the dataset and store it.</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="modeling">Modeling</h3>
+<ol>
+  <li><strong>Baseline Model Performance</strong>
+    <ul>
+      <li>Seven models tested: Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, Neural Network, XGBoost, and LightGBM</li>
+      <li>XGBoost and LightGBM showed best ROC-AUC scores (~0.765), indicating superior discrimination ability</li>
+      <li>Neural Network achieved highest F1 score (0.617) among baseline models</li>
+      <li>Training times varied significantly: Logistic Regression fastest (~1.2s), Neural Network slowest (~33s)</li>
+    </ul>
+  </li>
+  <li><strong>Model Selection Strategy</strong>
+    <ul>
+      <li>Custom weighted scoring implemented to prioritize fraud detection metrics:
+        <ul>
+          <li>Recall: 35% (most important - catch fraud cases)</li>
+          <li>F1: 25% (balance of precision and recall)</li>
+          <li>Precision: 15% (avoid false alarms)</li>
+          <li>ROC-AUC: 15% (overall discrimination)</li>
+          <li>Average Precision: 10% (performance across thresholds)</li>
+        </ul>
+      </li>
+      <li>Top 3 models selected automatically based on the weighted score: Neural Network, XGBoost, and LightGBM (Gradient Boosting added manually)</li>
+    </ul>
+  </li>
+  <li><strong>Hyperparameter Optimization</strong>
+    <ul>
+      <li>Two-stage optimization approach used:
+        <ul>
+          <li>Stage 1: RandomizedSearch for exploration</li>
+          <li>Stage 2: Optuna for focused exploitation (can switch to hyperparameter)</li>
+        </ul>
+      </li>
+      <li>Optimization results mixed:
+        <ul>
+          <li>All models showed decreased F1 scores after optimization</li>
+          <li>XGBoost and LightGBM improved recall by ~13% but lost ~12% precision</li>
+          <li>Gradient Boosting showed smallest performance drop</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Final Model Comparison</strong>
+    <ul>
+      <li>XGBoost selected as best model based on weighted scoring</li>
+      <li>Key performance metrics (XGBoost):
+        <ul>
+          <li>ROC-AUC: 0.771</li>
+          <li>F1 Score: 0.618</li>
+          <li>Recall: 0.526 (52.6% of fraud cases caught)</li>
+          <li>Precision: 0.751 (75.1% of flagged cases are actual fraud)</li>
+          <li>False Positive Rate: 0.0026-0.0028</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Model Stability Analysis</strong>
+    <ul>
+      <li>XGBoost showed excellent stability across train/test/out-of-time datasets</li>
+      <li>Minimal performance degradation from training to test sets</li>
+      <li>Consistent fraud capture rates (~84% in top bin, ~16% fraud rate in highest risk segment)</li>
+    </ul>
+  </li>
+  <li><strong>Business Implications</strong>
+    <ul>
+      <li>Trade-off identified: XGBoost has higher false positive rate (2.6-2.8 per 1000) compared to historical GBDT model (0.5-1.4 per 1000)</li>
+      <li>Recommendation: Consider GBDT for production if false positives are critical concern</li>
+      <li>Top 5% of scored transactions capture 84% of fraud cases, enabling efficient review strategies</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="technology-stack">Technology Stack</h2>
 
 <ul>
   <li>Python</li>
@@ -267,82 +627,165 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
   <li>Jupyter Notebooks</li>
 </ul>
 
-  </div>
-
-  
-    <div class="project-links">
-      <ul>
-        
-          <li>
-            <a href="https://github.com/YannaCS/Fraud-Detection-By-Machine-Learning" target="_blank" rel="noopener">Repository</a>
-          </li>
-        
-      </ul>
-    </div>
-  
-
-  <!-- Add this script here -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('.project-header');
-      const content = document.querySelector('.project-content');
-      const screenshot = document.querySelector('.project-screenshot');
+      </div>
       
-      if (header && content) {
-        function fixOverlap() {
-          // Reset any previous adjustments
-          content.style.marginTop = '';
-          content.style.paddingTop = '';
+      <!-- Links -->
+      
+      <div class="project-links">
+        <h3>Project Links</h3>
+        <ul>
           
-          // Wait a moment for layout to settle
-          setTimeout(() => {
-            // Get all images in the header
-            const images = header.querySelectorAll('img');
-            let maxBottom = header.getBoundingClientRect().bottom;
-            
-            // Find the lowest point of any image
-            images.forEach(img => {
-              const imgRect = img.getBoundingClientRect();
-              maxBottom = Math.max(maxBottom, imgRect.bottom);
-            });
-            
-            // Get content position
-            const contentTop = content.getBoundingClientRect().top;
-            
-            // Calculate needed spacing
-            const currentGap = contentTop - maxBottom;
-            
-            // If overlapping or too close (less than 30px gap)
-            if (currentGap < 30) {
-              const neededMargin = 30 - currentGap;
-              content.style.paddingTop = neededMargin + 'px';
-            }
-            
-            // For medium screens, add extra spacing
-            if (window.innerWidth >= 480 && window.innerWidth <= 1024) {
-              const currentPadding = parseInt(content.style.paddingTop) || 0;
-              content.style.paddingTop = (currentPadding + 50) + 'px';
-            }
-          }, 100);
-        }
+            <li>
+              <a href="https://github.com/YannaCS/Fraud-Detection-By-Machine-Learning" target="_blank" rel="noopener">Repository</a>
+            </li>
+          
+            <li>
+              <a href="https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ" target="_blank" rel="noopener">Paper</a>
+            </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!-- Resize Handle -->
+    <div class="resize-handle" id="resize-handle"></div>
+    
+    <!-- Right Panel - Fixed Images -->
+    <div class="right-panel" id="right-panel">
+      <!-- Main Screenshot -->
+      
+      <div class="main-screenshot">
+        <img src="/assets/img/projects/FraudDetection/poster1.png" alt="Fraud Detection by Machine Learning">
+      </div>
+      
+      
+      <!-- Additional Plots -->
+      
         
-        // Run on various events
-        fixOverlap();
-        window.addEventListener('resize', fixOverlap);
-        window.addEventListener('load', fixOverlap);
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/1_fraud%20distribution.png" alt="Transaction Fraud Distribution">
+          
+          <div class="plot-caption">Transaction Fraud Distribution</div>
+          
+        </div>
         
-        // Watch for image loads
-        const images = header.querySelectorAll('img');
-        images.forEach(img => {
-          img.addEventListener('load', fixOverlap);
-          // Also check if image is already cached
-          if (img.complete) {
-            setTimeout(fixOverlap, 50);
-          }
-        });
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/1_time%20analysis.png" alt="Time Analysis">
+          
+          <div class="plot-caption">Time Analysis</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/1_heatmap_daily%20fraud%20transaction.png" alt="Effect of Date and Day of Week">
+          
+          <div class="plot-caption">Effect of Date and Day of Week</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/1_fraud_rate_map.gif" alt="Max Fraud Rate Hexbin Map">
+          
+          <div class="plot-caption">Max Fraud Rate Hexbin Map</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/2_RFECV.png" alt="Feature Selection">
+          
+          <div class="plot-caption">Feature Selection</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/2_pca.png" alt="Number of PCA Components to Explain Most Variance">
+          
+          <div class="plot-caption">Number of PCA Components to Explain Most Variance</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/3_Baseline%20Models%20Comparison.png" alt="7 Baseline Models Comparison">
+          
+          <div class="plot-caption">7 Baseline Models Comparison</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/3_Optimization%20Effect.png" alt="Baseline VS Optimized">
+          
+          <div class="plot-caption">Baseline VS Optimized</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/3_Optimized%20Model%20Comparison.png" alt="4 Optimized Models Comparison">
+          
+          <div class="plot-caption">4 Optimized Models Comparison</div>
+          
+        </div>
+        
+        <div class="plot-item">
+          <img src="/assets/img/projects/FraudDetection/final%20evaluation_xgboost.png" alt=" Final Model Evaluation - XGBoost">
+          
+          <div class="plot-caption"> Final Model Evaluation - XGBoost</div>
+          
+        </div>
+        
+      
+    </div>
+  </div>
+  
+  <script>
+    // Make panels resizable
+    const container = document.getElementById('split-container');
+    const leftPanel = document.getElementById('left-panel');
+    const rightPanel = document.getElementById('right-panel');
+    const resizeHandle = document.getElementById('resize-handle');
+    
+    let isResizing = false;
+    let startX = 0;
+    let startLeftWidth = 0;
+    
+    resizeHandle.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      startX = e.clientX;
+      startLeftWidth = leftPanel.offsetWidth;
+      document.body.style.cursor = 'col-resize';
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const deltaX = e.clientX - startX;
+      const containerWidth = container.offsetWidth;
+      const newLeftWidth = startLeftWidth + deltaX;
+      const leftPercent = (newLeftWidth / containerWidth) * 100;
+      
+      // Limit between 20% and 60%
+      if (leftPercent >= 20 && leftPercent <= 60) {
+        leftPanel.style.width = leftPercent + '%';
+        rightPanel.style.flex = '1';
       }
     });
-    </script>
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+    });
+    
+    // Save and restore panel sizes
+    const savedWidth = localStorage.getItem('projectPanelWidth');
+    if (savedWidth) {
+      leftPanel.style.width = savedWidth;
+    }
+    
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('projectPanelWidth', leftPanel.style.width);
+    });
+  </script>
 </article>
     
 

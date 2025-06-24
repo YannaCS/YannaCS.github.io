@@ -18,7 +18,7 @@ featured: true
 --- 
 
 ## Project Details
-
+<br><br>
 Here's more detailed information about it:
 
 - **Multiple Data Sources**: Analyze built-in sample datasets or upload your own CSV files

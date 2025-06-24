@@ -1,0 +1,314 @@
+---
+layout: base
+---
+
+<article class="project project-grid-layout" role="article">
+  <style>
+    /* Custom styles for this specific layout */
+    .project-grid-layout {
+      padding: 1rem !important;
+      height: calc(100vh - 2rem);
+      overflow: hidden;
+    }
+    
+    .project-split-container {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      max-width: 100%;
+      margin: 0;
+      position: relative;
+    }
+    
+    /* Resizable divider */
+    .resize-handle {
+      width: 10px;
+      height: 100%;
+      background: #e0e0e0;
+      cursor: col-resize;
+      position: relative;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    
+    .resize-handle:hover {
+      background: #bbb;
+    }
+    
+    .resize-handle::before {
+      content: '⋮⋮⋮';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      color: #666;
+      font-size: 12px;
+      letter-spacing: -2px;
+    }
+    
+    /* Left side - scrollable text */
+    .left-panel {
+      overflow-y: auto;
+      padding-right: 1rem;
+      height: 100%;
+      width: 33.33%;
+      flex-shrink: 0;
+    }
+    
+    /* Custom scrollbar for left panel */
+    .left-panel::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    .left-panel::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    
+    .left-panel::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+    
+    .left-panel::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+    
+    /* Title styling */
+    .grid-title h1 {
+      margin: 0 0 2rem 0;
+      font-size: 2.5rem;
+      font-weight: bold;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #333;
+    }
+    
+    /* Description section */
+    .grid-description {
+      margin-bottom: 3rem;
+    }
+    
+    .grid-description ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    
+    .grid-description ul li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .grid-description ul li:before {
+      content: "—";
+      position: absolute;
+      left: 0;
+    }
+    
+    /* Content styling */
+    .grid-content {
+      margin-top: 2rem;
+    }
+    
+    .grid-content h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Right side - fixed images */
+    .right-panel {
+      overflow-y: auto;
+      height: 100%;
+      padding-left: 1rem;
+      flex: 1;
+    }
+    
+    /* Main screenshot */
+    .main-screenshot {
+      margin-bottom: 2rem;
+    }
+    
+    .main-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Additional plots */
+    .plot-item {
+      margin-bottom: 2rem;
+    }
+    
+    .plot-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .plot-item .plot-caption {
+      font-size: 0.9rem;
+      color: #666;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    /* Links styling */
+    .project-links {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ddd;
+    }
+    
+    /* Responsive design - stack on mobile */
+    @media (max-width: 768px) {
+      .project-grid-layout {
+        height: auto;
+        overflow: visible;
+      }
+      
+      .project-split-container {
+        flex-direction: column;
+        height: auto;
+      }
+      
+      .left-panel {
+        overflow: visible;
+        height: auto;
+        padding-right: 0;
+        margin-bottom: 2rem;
+        width: 100%;
+      }
+      
+      .right-panel {
+        overflow: visible;
+        height: auto;
+        padding-left: 0;
+        width: 100%;
+      }
+      
+      .resize-handle {
+        display: none;
+      }
+    }
+    
+    /* When sidebar is visible on desktop */
+    @media (min-width: 64em) {
+      body:not(.no-drawer) .project-grid-layout {
+        margin-left: 21rem;
+        width: calc(100% - 21rem) !important;
+        padding: 1rem !important;
+      }
+    }
+  </style>
+  
+  <div class="project-split-container" id="split-container">
+    <!-- Left Panel - Scrollable Text -->
+    <div class="left-panel" id="left-panel">
+      <!-- Title Section -->
+      <div class="grid-title">
+        <h1>{{ page.title }}</h1>
+      </div>
+      
+      <!-- Description Section -->
+      <div class="grid-description">
+        {{ page.description | markdownify }}
+      </div>
+      
+      <!-- Main Content -->
+      <div class="grid-content">
+        {{ content }}
+      </div>
+      
+      <!-- Links -->
+      {% if page.links %}
+      <div class="project-links">
+        <h3>Project Links</h3>
+        <ul>
+          {% for link in page.links %}
+            <li>
+              <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+    
+    <!-- Resize Handle -->
+    <div class="resize-handle" id="resize-handle"></div>
+    
+    <!-- Right Panel - Fixed Images -->
+    <div class="right-panel" id="right-panel">
+      <!-- Main Screenshot -->
+      {% if page.screenshot %}
+      <div class="main-screenshot">
+        <img src="{{ page.screenshot.src | relative_url }}" alt="{{ page.title }}">
+      </div>
+      {% endif %}
+      
+      <!-- Additional Plots -->
+      {% if page.plots %}
+        {% for plot in page.plots %}
+        <div class="plot-item">
+          <img src="{{ plot.src | relative_url }}" alt="{{ plot.caption | default: 'Plot' }}">
+          {% if plot.caption %}
+          <div class="plot-caption">{{ plot.caption }}</div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  
+  <script>
+    // Make panels resizable
+    const container = document.getElementById('split-container');
+    const leftPanel = document.getElementById('left-panel');
+    const rightPanel = document.getElementById('right-panel');
+    const resizeHandle = document.getElementById('resize-handle');
+    
+    let isResizing = false;
+    let startX = 0;
+    let startLeftWidth = 0;
+    
+    resizeHandle.addEventListener('mousedown', (e) => {
+      isResizing = true;
+      startX = e.clientX;
+      startLeftWidth = leftPanel.offsetWidth;
+      document.body.style.cursor = 'col-resize';
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isResizing) return;
+      
+      const deltaX = e.clientX - startX;
+      const containerWidth = container.offsetWidth;
+      const newLeftWidth = startLeftWidth + deltaX;
+      const leftPercent = (newLeftWidth / containerWidth) * 100;
+      
+      // Limit between 20% and 60%
+      if (leftPercent >= 20 && leftPercent <= 60) {
+        leftPanel.style.width = leftPercent + '%';
+        rightPanel.style.flex = '1';
+      }
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isResizing = false;
+      document.body.style.cursor = '';
+    });
+    
+    // Save and restore panel sizes
+    const savedWidth = localStorage.getItem('projectPanelWidth');
+    if (savedWidth) {
+      leftPanel.style.width = savedWidth;
+    }
+    
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('projectPanelWidth', leftPanel.style.width);
+    });
+  </script>
+</article>
