@@ -30,7 +30,7 @@ order: 1
 .timeline-item {
   position: relative;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: -50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1090,18 +1090,14 @@ Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail
 I'm here to help transform your data into **valuable insights and profit!**
 
 
-<script>
-function flipCard(element) {
-  // Check if element has no-flip class
-  if (element.classList.contains('no-flip')) {
-    return; // Exit without flipping
-  }
+<script type="text/javascript">
+window.flipCard = function(element) {
+  if (!element) return;
+  if (element.classList.contains('no-flip')) return;
   
-  // Toggle flipped class
   element.classList.toggle('flipped');
   
-  // Optional: Close other flipped cards
-  document.querySelectorAll('.timeline-content').forEach(item => {
+  document.querySelectorAll('.timeline-content').forEach(function(item) {
     if (item !== element && item.classList.contains('flipped')) {
       item.classList.remove('flipped');
     }
