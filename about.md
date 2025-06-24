@@ -4,7 +4,7 @@ title: About Me
 menu: true
 order: 1
 ---
-
+<!-- To adjust the sentance below About Me title, go to _site/about/index.html-->
 <style>
 /* Timeline Styles */
 .timeline-container {
