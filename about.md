@@ -30,7 +30,7 @@ order: 1
 .timeline-item {
   position: relative;
   width: 100%;
-  margin-bottom: -50px;
+  margin-bottom: -60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1085,7 +1085,7 @@ We really enjoy the US's friendly pet-environment and appreciate people saying "
 
 ## Contact
 
-Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/chengyang-shen) and [GitHub](https://github.com/YannisCS). You can also access to the above link and **download my resume** from side bar.  
+Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/chengyang-shen) and [GitHub](https://github.com/YannisCS). You can also access to the above links and **download my resume** from side bar.  
 
 I'm here to help transform your data into **valuable insights and profit!**
 
