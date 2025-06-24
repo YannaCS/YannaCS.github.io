@@ -30,7 +30,7 @@ order: 1
 .timeline-item {
   position: relative;
   width: 100%;
-  margin-bottom: -60px;
+  margin-bottom: -50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
