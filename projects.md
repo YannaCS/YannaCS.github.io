@@ -12,6 +12,6 @@ Here you'll find a collection of my data science and engineering projects. Each 
 <br><br>
 <div class="hint">
   <span class="hint-icon">💡</span>
-  <span class="hint-text">Click the card for a quick overview, or visit the repository for detailed information.</span>
+  <span class="hint-text">Click the title for a quick overview, or visit the repository for detailed information.</span>
 </div>
 </div>

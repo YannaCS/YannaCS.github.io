@@ -5,8 +5,8 @@ layout: base
 <article class="project" role="article">
   <h1 class="page-title">{{ page.title }}</h1>
   
-  <!-- Two-column header section -->
-  <div class="project-header">
+  <!-- Two-column header section with normal spacing -->
+  <div class="project-header" style="margin-bottom: 2rem !important; padding-bottom: 1rem !important;">
     <!-- Left column: Description -->
     <div class="project-description">
       {{ page.description | markdownify }}
@@ -19,15 +19,20 @@ layout: base
         src="{{ page.screenshot.src | relative_url }}" 
         alt="{{ page.title }}"
         {% if page.screenshot.max_height %}
-          style="max-height: {{ page.screenshot.max_height }};"
+          style="max-height: {{ page.screenshot.max_height }}; margin-bottom: 1rem !important;"
+        {% else %}
+          style="margin-bottom: 1rem !important;"
         {% endif %}
       />
     </div>
     {% endif %}
   </div>
 
-  <!-- Full width content section -->
-  <div class="project-content">
+  <!-- Small spacer div for clean separation -->
+  <div class="content-spacer" style="height: 1.5rem; width: 100%; clear: both; display: block;"></div>
+
+  <!-- Full width content section with normal spacing -->
+  <div class="project-content" style="margin-top: 1rem !important; padding-top: 1rem !important; position: relative; z-index: 999;">
     {{ content }}
   </div>
 
@@ -43,66 +48,202 @@ layout: base
     </div>
   {% endif %}
 
-  <!-- Add this script here -->
+  <style>
+    /* Fix Hydejack theme positioning issues */
+    body.br-exclusions-footer.br-exclusions-aside.br-exclusions-button {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+    }
+    
+    hy-push-state {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      z-index: auto !important;
+    }
+    
+    main#_main.content.layout-project {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    article.project {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      margin-top: 0 !important;
+    }
+    
+    /* Override any theme styles with maximum specificity */
+    .project .project-header {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 2rem !important;
+      margin-bottom: 2rem !important;
+      padding-bottom: 1rem !important;
+      overflow: visible !important;
+      position: relative !important;
+      z-index: 1 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    .project .project-description {
+      flex: 1 !important;
+      min-width: 0 !important;
+      max-width: 50% !important;
+    }
+    
+    .project .project-screenshot {
+      flex: 1 !important;
+      min-width: 0 !important;
+      max-width: 50% !important;
+      position: relative !important;
+    }
+    
+    .project .project-screenshot img {
+      display: block !important;
+      max-width: 100% !important;
+      height: auto !important;
+      width: 100% !important;
+      margin-bottom: 1rem !important;
+      position: relative !important;
+      float: none !important;
+      clear: none !important;
+    }
+    
+    .project .content-spacer {
+      height: 1.5rem !important;
+      width: 100% !important;
+      clear: both !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+    
+    .project .project-content {
+      position: relative !important;
+      z-index: 999 !important;
+      clear: both !important;
+      margin-top: 1rem !important;
+      padding-top: 1rem !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Mobile phones - stack vertically with minimal spacing */
+    @media (max-width: 600px) {
+      .project .project-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+      
+      .project .project-description,
+      .project .project-screenshot {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      
+      .project .content-spacer {
+        height: 0.5rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 0.5rem !important;
+        padding-top: 0.5rem !important;
+      }
+    }
+    
+    /* Tablets and small laptops - reduced spacing */
+    @media (min-width: 601px) and (max-width: 1200px) {
+      .project .project-header {
+        margin-bottom: 1rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+      
+      .project .content-spacer {
+        height: 0.75rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 0.5rem !important;
+        padding-top: 0.5rem !important;
+      }
+    }
+    
+    /* Large laptops and desktops - normal spacing */
+    @media (min-width: 1201px) {
+      .project .project-header {
+        margin-bottom: 2rem !important;
+        padding-bottom: 1rem !important;
+      }
+      
+      .project .content-spacer {
+        height: 1.5rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+      }
+    }
+    
+    /* Override any possible float or positioning */
+    .project .project-header * {
+      float: none !important;
+      position: relative !important;
+    }
+    
+    /* Ensure no negative margins */
+    .project .project-content *:first-child {
+      margin-top: 0 !important;
+    }
+    
+    /* Force clearfix */
+    .project .project-content::before,
+    .project .project-content::after {
+      content: "" !important;
+      display: table !important;
+      clear: both !important;
+    }
+  </style>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const header = document.querySelector('.project-header');
-      const content = document.querySelector('.project-content');
-      const screenshot = document.querySelector('.project-screenshot');
-      
-      if (header && content) {
-        function fixOverlap() {
-          // Reset any previous adjustments
-          content.style.marginTop = '';
-          content.style.paddingTop = '';
-          
-          // Wait a moment for layout to settle
-          setTimeout(() => {
-            // Get all images in the header
-            const images = header.querySelectorAll('img');
-            let maxBottom = header.getBoundingClientRect().bottom;
-            
-            // Find the lowest point of any image
-            images.forEach(img => {
-              const imgRect = img.getBoundingClientRect();
-              maxBottom = Math.max(maxBottom, imgRect.bottom);
-            });
-            
-            // Get content position
-            const contentTop = content.getBoundingClientRect().top;
-            
-            // Calculate needed spacing
-            const currentGap = contentTop - maxBottom;
-            
-            // If overlapping or too close (less than 30px gap)
-            if (currentGap < 30) {
-              const neededMargin = 30 - currentGap;
-              content.style.paddingTop = neededMargin + 'px';
-            }
-            
-            // For medium screens, add extra spacing
-            if (window.innerWidth >= 480 && window.innerWidth <= 1024) {
-              const currentPadding = parseInt(content.style.paddingTop) || 0;
-              content.style.paddingTop = (currentPadding + 50) + 'px';
-            }
-          }, 100);
-        }
+      function fixHydejackPositioning() {
+        // Fix Hydejack positioning issues without any visual effects
+        const problematicElements = [
+          document.querySelector('body'),
+          document.querySelector('hy-push-state'),
+          document.querySelector('main#_main'),
+          document.querySelector('article.project')
+        ];
         
-        // Run on various events
-        fixOverlap();
-        window.addEventListener('resize', fixOverlap);
-        window.addEventListener('load', fixOverlap);
-        
-        // Watch for image loads
-        const images = header.querySelectorAll('img');
-        images.forEach(img => {
-          img.addEventListener('load', fixOverlap);
-          // Also check if image is already cached
-          if (img.complete) {
-            setTimeout(fixOverlap, 50);
+        problematicElements.forEach(el => {
+          if (el && el.getBoundingClientRect().top < 0) {
+            el.style.position = 'relative';
+            el.style.top = 'auto';
+            el.style.transform = 'none';
+            el.style.marginTop = '0';
+            el.style.paddingTop = '0';
           }
         });
       }
+      
+      // Run the fix silently
+      fixHydejackPositioning();
+      window.addEventListener('resize', fixHydejackPositioning);
+      window.addEventListener('load', fixHydejackPositioning);
+      
+      setTimeout(fixHydejackPositioning, 100);
     });
-    </script>
+  </script>
 </article>

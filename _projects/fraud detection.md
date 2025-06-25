@@ -3,12 +3,12 @@ layout: project-grid
 title: Fraud Detection by Machine Learning
 date: 2020-08-01
 screenshot:
-  src: /assets/img/projects/FraudDetection/poster1.png
+  src: /assets/img/projects/FraudDetection/new_poster1.png
   #max_height: 850px  # Custom height for this specific project
   srcset:
-    1920w: /assets/img/projects/FraudDetection/poster1.png
-    960w: /assets/img/projects/FraudDetection/poster1@0.5x.png
-    480w: /assets/img/projects/FraudDetection/poster1@0.25x.png
+    1920w: /assets/img/projects/FraudDetection/new_poster1.png
+    960w: /assets/img/projects/FraudDetection/new_poster1@0.5x.png
+    480w: /assets/img/projects/FraudDetection/new_poster1@0.25x.png
 plots:
   - src: /assets/img/projects/FraudDetection/1_fraud distribution.png
     caption: "Transaction Fraud Distribution"

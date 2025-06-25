@@ -10,8 +10,8 @@ screenshot:
     480w: /assets/img/projects/cluster/cluster_0_10s.gif
 description: >
   A dashboard for analyzing datasets by using K-means and Hierarchical clustering algorithms. This tool helps determine the <b>optimal number of clusters</b> and provides detailed <b>3d visualizations</b> and comparisons of clustering results.  
-  <br><br><br>
-  
+   
+   
   <a href="https://clustering-and-3d-plot.streamlit.app/" target="_blank" onclick="event.stopPropagation();">🎯Click here and Try it out </a>  
   
   (plz get it back up and wait it waking up for a moment)
