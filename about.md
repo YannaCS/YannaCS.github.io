@@ -554,10 +554,23 @@ order: 1
 }
 
 /* Style for emphasis - Make the "HIRE ME!" more prominent */
-strong:contains("HIRE ME") {
+/*strong:contains("HIRE ME") {
   color: #e74c3c;
   font-size: 1.1em;
+}*/
+.hire-me {
+  color: #e74c3c;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: sparkle 2s infinite;
 }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
 
 /* Responsive design */
 /* Large screens */
@@ -1081,11 +1094,30 @@ strong:contains("HIRE ME") {
 
 ## What Else
 
-Beyond the world of data and code, I enjoy exploring beautiful trails🏔️, finding tranquility and perspective on weekend hiking adventures. When indoors, I'm often immersed in books📚 that expand my horizons—from data science literature to thought-provoking fiction. I'm also an enthusiastic League of Legends🎮 player, where strategic thinking and teamwork👥 offer a different kind of problem-solving challenge. In my kitchen, you'll find me experimenting with baking🍰 techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.
+<p><b>Beyond the world of data and code：</b></p>  
+<ul>
+  <li>🏔️ I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures.</li>   
+  <li>📚 When indoors, I'm often immersed in books that expand my horizons—from data science literature to thought-provoking fiction. </li> 
+  <li>🎮 I'm also an enthusiastic League of Legends player, where strategic thinking and teamwork👥 offer a different kind of problem-solving challenge.</li>
+  <li>🍰 In my kitchen, you'll find me experimenting with baking techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</li>
+</ul>
 
-My constant companion on life's adventures is my beloved dog🐕, Wangwang Shen(沈旺旺), who made the incredible journey with me from China ✈️ to the USA. Having navigated international travel together, we now spend our days exploring neighborhoods and parks🛝. Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, no matter how busy life gets. 
+<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0;">
+  <div style="flex: 1;">
+    <p><b>My constant companion on life's adventures is:</b></p>
+    <ul>
+      <li>🐕 Wangwang Shen(沈旺旺), my beloved dog! He made the incredible journey with me from China ✈️ to the USA.</li>
+      <li>🧠 Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, no matter how busy life gets.</li>
+      <li>We really enjoy the US's friendly pet-environment and appreciate people saying "Your dog is so cute".</li>
+    </ul>
+    <p><b>To pet him and enjoy his fluffy tail,</b> <strong class="hire-me">HIRE ME!</strong></p>
+  </div>
+  
+  <div style="flex: 0 0 300px;">
+    <img src="{{ '/assets/img/ww_tail.GIF' | relative_url }}" alt="Wangwang Shen" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  </div>
+</div>
 
-We really enjoy the US's friendly pet-environment and appreciate people saying "Your dog is so cute". To help us stay, **HIRE ME!** 
 
 
 ## Contact
@@ -1109,3 +1141,4 @@ window.flipCard = function(element) {
   });
 }
 </script>
+
