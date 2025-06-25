@@ -623,10 +623,14 @@ order: 1
     padding: 0 0px;
   }
   
+  /*line and node with icon*/
   .timeline-container::before {
-    left: 10px; 
+    left: 6px; 
   }
-  
+  .timeline-node {
+    left: 6px;  /*30*/
+  }
+
   .timeline-item {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -640,9 +644,6 @@ order: 1
     margin-left: 30px;
   }
   
-  .timeline-node {
-    left: 10px;  /*30*/
-  }
   
   .timeline-front::after,
   .timeline-back::after {
