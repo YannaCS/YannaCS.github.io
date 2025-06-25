@@ -8,8 +8,8 @@ order: 1
 <style>
 /* Timeline Styles */
 .timeline-container {
-  max-width: 1400px;
-  margin: 60px auto;
+  max-width: 1600px;
+  margin: 50px auto;
   position: relative;
   padding: 0 60px;
 }
@@ -619,11 +619,11 @@ order: 1
 /* Mobile view */
 @media (max-width: 599px) {
   .timeline-container {
-    padding: 0 20px;
+    padding: 0 10px;
   }
   
   .timeline-container::before {
-    left: 30px;
+    left: 41px;  /*30*/
   }
   
   .timeline-item {
@@ -640,7 +640,7 @@ order: 1
   }
   
   .timeline-node {
-    left: 30px;
+    left: 31.5px;  /*30*/
   }
   
   .timeline-front::after,
@@ -648,6 +648,7 @@ order: 1
     display: none;
   }
 }
+
 </style>
 
 <!-- Content -->
