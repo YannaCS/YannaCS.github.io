@@ -9,7 +9,7 @@ order: 1
 /* Timeline Styles */
 .timeline-container {
   max-width: 1600px;
-  margin: 50px auto;
+  margin: 60px auto;
   position: relative;
   padding: 0 60px;
 }
