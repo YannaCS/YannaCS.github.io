@@ -210,7 +210,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
   <h1 class="page-title hr">About Me</h1>
 
-  <p>I’m a data engineer and analytics professional passionate about transforming complex data into actionable insights. Here’s a bit about my background, skills, and interests.</p>
+  <p>I am a data professional passionate about transforming complex data into actionable insights. This page is a bit about my background, skills, and interests.</p>
 
 
   
@@ -221,13 +221,14 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 
 
-  <style>
+  <!-- to change header's intro, go to /_data/authors.yml -->
+<style>
 /* Timeline Styles */
 .timeline-container {
   max-width: 1600px;
   margin: 60px auto;
   position: relative;
-  padding: 0 0px;
+  padding: 20px 30px; /*top and bottom, left and right*/
 }
 
 /* Central line */
@@ -295,7 +296,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   background: #f8f9fa;
-  padding: 5px 10px;  /*top and bottom, right and left*/
+  padding: 10px 25px;  /*top and bottom, right and left*/
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   box-sizing: border-box;
@@ -788,6 +789,25 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
   50% { opacity: 0.7; }
 }
 
+/* Dog section styling */
+.dog-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 20px 0;
+}
+.dog-text {
+  flex: 1;
+}
+.dog-image {
+  flex: 0 0 300px;
+}
+.dog-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
 
 /* Responsive design */
 /* Large screens */
@@ -860,10 +880,42 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     margin-left: 30px;
   }
   
+  /* Adjust padding */
+  .timeline-front,
+  .timeline-back {
+    padding: 5px 10px;
+  }
   
   .timeline-front::after,
   .timeline-back::after {
     display: none;
+  }
+}
+
+/* for words around dog plot */
+@media (max-width: 768px) {
+  .dog-section {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .dog-text {
+    flex: none;
+    width: 100%;
+  }
+  
+  .dog-image {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .dog-image {
+    max-width: 100%;
   }
 }
 
@@ -1315,21 +1367,23 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 
 <p><b>Beyond the world of data and code：</b></p>
 <p><span style="margin-left: 20px;">🏔️ I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures.</span></p>
-<p><span style="margin-left: 20px;">📚 When indoors, I'm often immersed in books that expand my horizons—from data science literature to thought-provoking fiction. </span></p>
-<p><span style="margin-left: 20px;">🎮 I'm also an enthusiastic League of Legends player, where strategic thinking and <u>teamwork</u> offer a different kind of problem-solving challenge.</span></p>
+<p><span style="margin-left: 20px;">📚 When indoors, I like reading books that expand my horizons—from data science literature to thought-provoking fiction. </span></p>
+<p><span style="margin-left: 20px;">🎮 I'm also an enthusiastic League of Legends player, where <i>strategic thinking</i> and <i>teamwork</i> offer a different kind of problem-solving challenge.</span></p>
 <p><span style="margin-left: 20px;">🍰 In my kitchen, you'll find me experimenting with baking techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</span></p>
 
-<div style="display: flex; align-items: flex-start; gap: 20px; margin: 20px 0;">
-  <div style="flex: 1;">
-    <p><b>My constant companion on life's adventures is:</b></p>
-      <p><span style="margin-left: 20px;">🐕 Wangwang Shen(沈旺旺), my beloved dog! He made the incredible journey with me from China ✈️ to the USA.</span></p>
-      <p><span style="margin-left: 20px;">🦋 Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, <u>no matter how busy</u> life gets.</span></p>
-      <p><span style="margin-left: 20px;">🌈 We really enjoy the US's friendly pet-environment and appreciate people saying "Your dog is so cute~" or "Fluffy makes my day!".</span></p>
+<p><br /></p>
+<p><b>My constant companion on life's adventures is:</b></p>
+<div class="dog-section">
+  <div class="dog-text">
+      <p><span style="margin-left: 20px;">🐕 Wangwang Shen, my beloved dog! </span></p>
+      <p><span style="margin-left: 20px;">✈️ He made the incredible journey with me from China to the USA.</span></p>
+      <p><span style="margin-left: 20px;">🦋 Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, <i>no matter how busy</i> life gets.</span></p>
+      <p><span style="margin-left: 20px;">🌈 We really enjoy the US's friendly pet-environment.</span></p>
     <p><b>To pet him and enjoy his fluffy tail,</b> <strong class="hire-me">HIRE ME!</strong></p>
   </div>
   
-  <div style="flex: 0 0 300px;">
-    <img src="/assets/img/ww_tail.GIF" alt="Wangwang Shen" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
+  <div class="dog-image">
+    <img src="/assets/img/ww_tail.GIF" alt="Wangwang Shen" />
   </div>
 </div>
 
