@@ -11,7 +11,7 @@ order: 1
   max-width: 1600px;
   margin: 60px auto;
   position: relative;
-  padding: 0 60px;
+  padding: 0 0px;
 }
 
 /* Central line */
@@ -45,8 +45,8 @@ order: 1
 
 /* Content box */
 .timeline-content {
-  width: 500px;
-  max-width: 45%;
+  width: 550px;
+  max-width: 47%;
   position: relative;
   cursor: pointer;
   perspective: 1000px;
@@ -79,7 +79,7 @@ order: 1
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   background: #f8f9fa;
-  padding: 25px 35px;
+  padding: 5px 10px;  /*top and bottom, right and left*/
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   box-sizing: border-box;
@@ -361,7 +361,8 @@ order: 1
   font-size: 0.9em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+  /*margin: 0px 0px 2px 0px; /* top right bottom left */
 }
 
 /* Milestone title */
@@ -369,7 +370,7 @@ order: 1
   font-size: 1em;
   font-weight: 600;
   color: #2c3e50;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   white-space: normal;
   line-height: 1.3;
@@ -576,24 +577,24 @@ order: 1
 /* Large screens */
 @media (max-width: 1400px) and (min-width: 969px) {
   .timeline-content {
-    width: 400px;
-    max-width: 42%;
+    width: 450px;
+    max-width: 46%;
   }
   
   .timeline-container {
-    padding: 0 40px;
+    padding: 0 0px;
   }
 }
 
 /* Tablet/half-screen */
 @media (max-width: 968px) and (min-width: 600px) {
   .timeline-content {
-    width: 350px;
-    max-width: 40%;
+    width: 400px;
+    max-width: 46%;
   }
   
   .timeline-container {
-    padding: 0 30px;
+    padding: 0 0px;
   }
   
   /* Reduce font sizes slightly */
@@ -602,28 +603,28 @@ order: 1
   }
   
   .timeline-description {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
   
   .timeline-details li {
-    font-size: 0.9em;
+    font-size: 0.85em;
   }
   
   /* Adjust padding */
   .timeline-front,
   .timeline-back {
-    padding: 20px 25px;
+    padding: 5px 10px;
   }
 }
 
 /* Mobile view */
 @media (max-width: 599px) {
   .timeline-container {
-    padding: 0 10px;
+    padding: 0 0px;
   }
   
   .timeline-container::before {
-    left: 41px;  /*30*/
+    left: 10px; 
   }
   
   .timeline-item {
@@ -636,11 +637,11 @@ order: 1
   .timeline-content {
     width: calc(100% - 80px);
     max-width: none;
-    margin-left: 80px;
+    margin-left: 30px;
   }
   
   .timeline-node {
-    left: 31.5px;  /*30*/
+    left: 10px;  /*30*/
   }
   
   .timeline-front::after,
