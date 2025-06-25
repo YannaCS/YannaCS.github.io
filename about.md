@@ -635,8 +635,8 @@ order: 1
   }
   
   .timeline-content {
-    width: calc(100% - 80px);
-    max-width: none;
+    width: calc(100% - 20px);
+    max-width: 98%;
     margin-left: 30px;
   }
   
