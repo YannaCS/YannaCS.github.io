@@ -6,7 +6,7 @@ layout: base
   <h1 class="page-title">{{ page.title }}</h1>
   
   <!-- Two-column header section with normal spacing -->
-  <div class="project-header" style="margin-bottom: 2rem !important; padding-bottom: 1rem !important;">
+  <div class="project-header" style="margin-bottom: 0.5rem !important; padding-bottom: 0.25rem !important;">
     <!-- Left column: Description -->
     <div class="project-description">
       {{ page.description | markdownify }}
@@ -29,10 +29,10 @@ layout: base
   </div>
 
   <!-- Small spacer div for clean separation -->
-  <div class="content-spacer" style="height: 1.5rem; width: 100%; clear: both; display: block;"></div>
+  <div class="content-spacer" style="height: 0.25rem; width: 100%; clear: both; display: block;"></div>
 
   <!-- Full width content section with normal spacing -->
-  <div class="project-content" style="margin-top: 1rem !important; padding-top: 1rem !important; position: relative; z-index: 999;">
+  <div class="project-content" style="margin-top: 0.25rem !important; padding-top: 0.25rem !important; position: relative; z-index: 999;">
     {{ content }}
   </div>
 
@@ -83,8 +83,8 @@ layout: base
       display: flex !important;
       align-items: flex-start !important;
       gap: 2rem !important;
-      margin-bottom: 2rem !important;
-      padding-bottom: 1rem !important;
+      margin-bottom: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
       overflow: visible !important;
       position: relative !important;
       z-index: 1 !important;
@@ -117,7 +117,7 @@ layout: base
     }
     
     .project .content-spacer {
-      height: 1.5rem !important;
+      height: 0.25rem !important;
       width: 100% !important;
       clear: both !important;
       display: block !important;
@@ -131,8 +131,8 @@ layout: base
       position: relative !important;
       z-index: 999 !important;
       clear: both !important;
-      margin-top: 1rem !important;
-      padding-top: 1rem !important;
+      margin-top: 0.25rem !important;
+      padding-top: 0.25rem !important;
       width: 100% !important;
       box-sizing: border-box !important;
     }
@@ -142,8 +142,8 @@ layout: base
       .project .project-header {
         flex-direction: column !important;
         gap: 1rem !important;
-        margin-bottom: 1rem !important;
-        padding-bottom: 0.5rem !important;
+        margin-bottom: 0rem !important; /*1rem*/
+        padding-bottom: 0rem !important;
       }
       
       .project .project-description,
@@ -153,46 +153,46 @@ layout: base
       }
       
       .project .content-spacer {
-        height: 0.5rem !important;
+        height: 0rem !important;
       }
       
       .project .project-content {
-        margin-top: 0.5rem !important;
-        padding-top: 0.5rem !important;
+        margin-top: 0rem !important;
+        padding-top: 0rem !important;
       }
     }
     
     /* Tablets and small laptops - reduced spacing */
     @media (min-width: 601px) and (max-width: 1200px) {
       .project .project-header {
-        margin-bottom: 1rem !important;
-        padding-bottom: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.25rem !important;
       }
       
       .project .content-spacer {
-        height: 0.75rem !important;
+        height: 0.25rem !important;
       }
       
       .project .project-content {
-        margin-top: 0.5rem !important;
-        padding-top: 0.5rem !important;
+        margin-top: 0.25rem !important;
+        padding-top: 0.25rem !important;
       }
     }
     
     /* Large laptops and desktops - normal spacing */
     @media (min-width: 1201px) {
       .project .project-header {
-        margin-bottom: 2rem !important;
-        padding-bottom: 1rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.25rem !important;
       }
       
       .project .content-spacer {
-        height: 1.5rem !important;
+        height: 0.25rem !important;
       }
       
       .project .project-content {
-        margin-top: 1rem !important;
-        padding-top: 1rem !important;
+        margin-top: 0.25rem !important;
+        padding-top: 0.25rem !important;
       }
     }
     
