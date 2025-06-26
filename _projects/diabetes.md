@@ -76,3 +76,9 @@ table:last-of-type {
   margin: 0 10 !important;
 }
 </style>
+
+## Future Work
+- Clean all features in the dataset
+- Polish the survey questions based the chosen features and outlier pattern
+- Build the platform for people to answer the updated questions and calculate the risk of type-2 diabetes
+- AI chatbox and report
