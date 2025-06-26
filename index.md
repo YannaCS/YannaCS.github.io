@@ -22,7 +22,7 @@ I am a Data Passionate with expertise in building end-to-end data solutions, fro
 </div>
 <div style="margin-bottom: 30px;"></div>
 <div class="expertise-highlights" style="text-align: left !important;">
-  <p>As a <strong>Tableau Certified Data Analyst</strong> with professional experience in data engineering and analytics, I specialize in:</p>
+  <p>I specialize in:</p>
   <ul>
     <li>Creating normalized database schemas and optimizing data models</li>
     <li>Developing interactive dashboards that transform data into actionable insights</li>
