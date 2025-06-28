@@ -529,7 +529,7 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: small;
+  font-size: medium;
   width: max-content;
 }
 
