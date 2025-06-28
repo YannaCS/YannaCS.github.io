@@ -703,13 +703,13 @@ order: 1
 }
 
 </style>
-
-<!-- Content -->
-## Here's where I am presently, and where I'm headed
 <div class="hint">
   <span class="hint-icon">💡</span>
   <span class="hint-text">Click cards for details</span>
 </div>
+
+<!-- Content -->
+<h2>Here's where I am presently, and where I'm headed</h2>
 
 <!-- Time line items -->
 <!-- <div class="timeline-marker">PRESENT</div> -->
@@ -992,7 +992,7 @@ order: 1
 
 <div class="timeline-marker">START</div>
 
-## Skills & Expertise
+<h2>Skills & Expertise</h2>
 <div class="skill-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 1px;">
 
   <div class="skill-category">

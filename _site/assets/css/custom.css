@@ -388,6 +388,11 @@ article.page,
   margin-left: 0 !important;
 }
 
+/* About page h2 headers specifically */
+.page h2 {
+  margin-top: 30px; /* Adjust this value */
+}
+
 /* When sidebar is visible on desktop */
 @media (min-width: 64em) {
   body:not(.no-drawer) .page,
