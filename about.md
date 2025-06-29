@@ -1146,7 +1146,7 @@ order: 1
 
 </div>
 
-## What Else
+<h2>What Else</h2>
 
 <p><b>Beyond the world of data and code：</b></p>  
   <p><span style="margin-left: 20px;">🏔️ I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures.</span></p>   
@@ -1172,7 +1172,7 @@ order: 1
 
 
 
-## Contact
+<h2>Contact</h2>
 
 Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/chengyang-shen) and [GitHub](https://github.com/YannisCS). You can also access to the above links and **download my resume** from side bar.  
 

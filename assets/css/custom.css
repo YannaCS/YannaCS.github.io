@@ -390,7 +390,7 @@ article.page,
 
 /* About page h2 headers specifically */
 .page h2 {
-  margin-top: 30px; /* Adjust this value */
+  margin-top: 50px; /* Adjust this value */
 }
 
 /* When sidebar is visible on desktop */
