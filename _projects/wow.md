@@ -20,9 +20,21 @@ links:
     url: https://github.com/YannaCS/WoW-DataHub
 featured: true
 --- 
+<h2> Project Overview </h2>
+<img src="{{ '/assets/img/projects/WoW/workflow.png' | relative_url }}" alt=''>
 
-## Development Workflow
-### Phase 1: Database Design & Schema Creation
+Watch how it works:
+<iframe 
+    width="900" 
+    height="506.25"
+    src="https://www.youtube.com/embed/YLpJw_OEadc"
+    frameborder="0" 
+    allowfullscreen>
+</iframe>
+
+
+<h2> Development Process </h2>
+<h3> Phase 1: Database Design & Schema Creation </h3>
 Objective: Design normalized relational database schema with ER-Diagram for MMORPG character data
 
 - Created comprehensive entity-relationship diagrams using crow's feet notation
@@ -30,7 +42,7 @@ Objective: Design normalized relational database schema with ER-Diagram for MMOR
 - Defined relationship modalities and cardinalities for optimal performance
 - Technologies: **MySQL, ER Modeling, Database Normalization**
 
-### Phase 2: Physical Implementation & Data Layer
+<h3> Phase 2: Physical Implementation & Data Layer</h3>
 Objective: Build secure data access layer with proper validation and abstraction
 
 - Implemented physical data models with appropriate primary and foreign key, and update, delete constraints
@@ -39,7 +51,7 @@ Objective: Build secure data access layer with proper validation and abstraction
 - Built abstraction layers for database operations with transaction support
 - Technologies: **JAVA, JDBC, Data Validation, SQL Security**
 
-### Phase 3: ETL Pipeline & Data Integration
+<h3> Phase 3: ETL Pipeline & Data Integration</h3>
 Objective: Build robust ETL processes for data ingestion and transformation
 
 - Designed automated ETL pipelines to extract data from multiple game servers
@@ -49,7 +61,7 @@ Objective: Build robust ETL processes for data ingestion and transformation
 - Developed error handling and logging mechanisms for failed data loads
 - Technologies: **JAVA, JDBC Batch Processing, SQL Stored Procedures, Data Validation**
 
-### Phase 4: Query Development & Analytics
+<h3> Phase 4: Query Development & Analytics</h3>
 Objective: Implement complex analytics and reporting capabilities  
 
 - Developed sophisticated SQL queries using multiple joins and aggregations
@@ -58,7 +70,7 @@ Objective: Implement complex analytics and reporting capabilities
 - Implemented efficient indexing strategies for query optimization
 - Technologies: **SQL, Joins & Aggregations, Views, Data Analytics, Reporting**
 
-### Phase 5: Web Interface & Stakeholder Dashboard
+<h3> Phase 5: Web Interface & Stakeholder Dashboard</h3>
 Objective: Create interactive web application for data visualization and management 
 
 - Built JSP-based web application with MVC architecture
@@ -67,14 +79,15 @@ Objective: Create interactive web application for data visualization and managem
 - Developed role-based access control for different stakeholder views
 - Technologies: **JSP, Web Development, Interactive UI, Git Version Control**
 
-## Key Features
-### 🎯 Character Data Management
+
+<h2>Key Features</h2>
+<h3>🎯 Character Data Management</h3>
 
 - Comprehensive player profile tracking including levels, achievements, and inventory
 - Real-time synchronization of game statistics
 - Historical data tracking for player progression analysis
 
-### 🔄 ETL Pipeline
+<h3>🔄 ETL Pipeline</h3>
 
 - Automated data extraction from multiple game server logs
 - Real-time and batch processing capabilities
@@ -82,27 +95,27 @@ Objective: Create interactive web application for data visualization and managem
 - Quality checks and validation at each stage
 - Error handling and recovery mechanisms
 
-### 🛡️ Security Implementation
-
-- Prepared statements to prevent SQL injection
-- Input sanitization and validation at multiple layers
-- Secure session management and authentication
-- Encrypted sensitive data storage
-
-### 📈 Analytics Engine
+<h3>🛡️ Security Implementation</h3>
+<ul>
+<li>Prepared statements to prevent SQL injection</li>
+<li>Input sanitization and validation at multiple layers</li>
+<li>Secure session management and authentication</li>
+<li>Encrypted sensitive data storage</li>
+</ul>
+<h3>📈 Analytics Engine</h3>
 
 - Multi-dimensional analysis of player behavior
 - Performance metrics and KPI tracking
 - Custom report generation with export capabilities
 - Trend analysis and predictive modeling support
 
-### 👥 Stakeholder Portal
+<h3>👥 Stakeholder Portal</h3>
 
 - Interactive data visualization with drill-down capabilities
 - Real-time filtering and search functionality
 - Responsive design for mobile and desktop access
 
-## Technical Architecture
+<h2>Technical Architecture</h2>
 The system follows a three-tier architecture:
 
 - Presentation Layer: JSP pages with JSTL for dynamic content rendering
@@ -110,7 +123,7 @@ The system follows a three-tier architecture:
 - Data Access Layer: JDBC-based DAOs with connection pooling for efficient database access
 
 
-## Future Enhancements
+<h2>Future Enhancements</h2>
 
 - Migration to Spring Boot for improved scalability
 - Implementation of RESTful APIs for mobile app integration
