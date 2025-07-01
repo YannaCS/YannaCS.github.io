@@ -42,6 +42,9 @@ Objective: Design normalized relational database schema with ER-Diagram for MMOR
 - Defined relationship modalities and cardinalities for optimal performance
 - Technologies: **MySQL, ER Modeling, Database Normalization**
 
+<img src="{{ '/assets/img/projects/WoW/ERD.jpg' | relative_url }}" alt=''>
+
+
 <h3> Phase 2: Physical Implementation & Data Layer</h3>
 Objective: Build secure data access layer with proper validation and abstraction
 
@@ -61,6 +64,8 @@ Objective: Build robust ETL processes for data ingestion and transformation
 - Developed error handling and logging mechanisms for failed data loads
 - Technologies: **JAVA, JDBC Batch Processing, SQL Stored Procedures, Data Validation**
 
+<img src="{{ '/assets/img/projects/WoW/etl.png' | relative_url }}" alt='' width="900">
+
 <h3> Phase 4: Query Development & Analytics</h3>
 Objective: Implement complex analytics and reporting capabilities  
 
@@ -69,6 +74,8 @@ Objective: Implement complex analytics and reporting capabilities
 - Built analytics engine for multi-dimensional game statistics analysis
 - Implemented efficient indexing strategies for query optimization
 - Technologies: **SQL, Joins & Aggregations, Views, Data Analytics, Reporting**
+
+<img src="{{ '/assets/img/projects/WoW/dbViews.png' | relative_url }}" alt='' width="300">
 
 <h3> Phase 5: Web Interface & Stakeholder Dashboard</h3>
 Objective: Create interactive web application for data visualization and management 
@@ -79,6 +86,9 @@ Objective: Create interactive web application for data visualization and managem
 - Developed role-based access control for different stakeholder views
 - Technologies: **JSP, Web Development, Interactive UI, Git Version Control**
 
+<img src="{{ '/assets/img/projects/WoW/homepage_charts.png' | relative_url }}" alt='' width="900">
+<img src="{{ '/assets/img/projects/WoW/char.png' | relative_url }}" alt='' width="900">  
+<img src="{{ '/assets/img/projects/WoW/weapon.png' | relative_url }}" alt='' width="900">
 
 <h2>Key Features</h2>
 <h3>🎯 Character Data Management</h3>
