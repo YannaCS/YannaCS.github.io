@@ -176,7 +176,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
 <hy-push-state>
   <main
     id="_main"
-    class="content fade-in layout-project-grid"
+    class="content fade-in layout-project"
     role="main"
     data-color="#4fb1ba"
     data-theme-color=""
@@ -185,224 +185,37 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       data-overlay
     
     >
-    <article class="project project-grid-layout" role="article">
-  <style>
-    /* Custom styles for this specific layout */
-    .project-grid-layout {
-      padding: 1rem !important;
-      height: calc(100vh - 2rem);
-      overflow: hidden;
-    }
-    
-    .project-split-container {
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      max-width: 100%;
-      margin: 0;
-      position: relative;
-    }
-    
-    /* Resizable divider */
-    .resize-handle {
-      width: 10px;
-      height: 100%;
-      background: #e0e0e0;
-      cursor: col-resize;
-      position: relative;
-      transition: background 0.2s;
-      flex-shrink: 0;
-    }
-    
-    .resize-handle:hover {
-      background: #bbb;
-    }
-    
-    .resize-handle::before {
-      content: '⋮⋮⋮';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(90deg);
-      color: #666;
-      font-size: 12px;
-      letter-spacing: -2px;
-    }
-    
-    /* Left side - scrollable text */
-    .left-panel {
-      overflow-y: auto;
-      padding-right: 1rem;
-      height: 100%;
-      width: 33.33%;
-      flex-shrink: 0;
-    }
-    
-    /* Custom scrollbar for left panel */
-    .left-panel::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    .left-panel::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-    
-    .left-panel::-webkit-scrollbar-thumb {
-      background: #888;
-      border-radius: 4px;
-    }
-    
-    .left-panel::-webkit-scrollbar-thumb:hover {
-      background: #555;
-    }
-    
-    /* Title styling */
-    .grid-title h1 {
-      margin: 0 0 2rem 0;
-      font-size: 2.5rem;
-      font-weight: bold;
-      padding-bottom: 1rem;
-      border-bottom: 2px solid #333;
-    }
-    
-    /* Description section */
-    .grid-description {
-      margin-bottom: 3rem;
-    }
-    
-    .grid-description ul {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0;
-    }
-    
-    .grid-description ul li {
-      position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    
-    .grid-description ul li:before {
-      content: "—";
-      position: absolute;
-      left: 0;
-    }
-    
-    /* Content styling */
-    .grid-content {
-      margin-top: 2rem;
-    }
-    
-    .grid-content h2 {
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    
-    /* Right side - fixed images */
-    .right-panel {
-      overflow-y: auto;
-      height: 100%;
-      padding-left: 1rem;
-      flex: 1;
-    }
-    
-    /* Main screenshot */
-    .main-screenshot {
-      margin-bottom: 2rem;
-    }
-    
-    .main-screenshot img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    
-    /* Additional plots */
-    .plot-item {
-      margin-bottom: 2rem;
-    }
-    
-    .plot-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-    
-    .plot-item .plot-caption {
-      font-size: 0.9rem;
-      color: #666;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    
-    /* Links styling */
-    .project-links {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #ddd;
-    }
-    
-    /* Responsive design - stack on mobile */
-    @media (max-width: 768px) {
-      .project-grid-layout {
-        height: auto;
-        overflow: visible;
-      }
-      
-      .project-split-container {
-        flex-direction: column;
-        height: auto;
-      }
-      
-      .left-panel {
-        overflow: visible;
-        height: auto;
-        padding-right: 0;
-        margin-bottom: 2rem;
-        width: 100%;
-      }
-      
-      .right-panel {
-        overflow: visible;
-        height: auto;
-        padding-left: 0;
-        width: 100%;
-      }
-      
-      .resize-handle {
-        display: none;
-      }
-    }
-    
-    /* When sidebar is visible on desktop */
-    @media (min-width: 64em) {
-      body:not(.no-drawer) .project-grid-layout {
-        margin-left: 21rem;
-        width: calc(100% - 21rem) !important;
-        padding: 1rem !important;
-      }
-    }
-  </style>
+    <article class="project" role="article">
+  <h1 class="page-title">Fraud Detection by Machine Learning</h1>
   
-  <div class="project-split-container" id="split-container">
-    <!-- Left Panel - Scrollable Text -->
-    <div class="left-panel" id="left-panel">
-      <!-- Title Section -->
-      <div class="grid-title">
-        <h1>Fraud Detection by Machine Learning</h1>
-      </div>
-      
-      <!-- Description Section -->
-      <div class="grid-description">
-        <p>A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.</p>
+  <!-- Two-column header section with normal spacing -->
+  <div class="project-header" style="margin-bottom: 0.5rem !important; padding-bottom: 0.25rem !important;">
+    <!-- Left column: Description -->
+    <div class="project-description">
+      <p>A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.</p>
 
-      </div>
-      
-      <!-- Main Content -->
-      <div class="grid-content">
-        <h2 id="highlights">Highlights</h2>
+    </div>
+    
+    <!-- Right column: Screenshot -->
+    
+    <div class="project-screenshot">
+      <img 
+        src="/assets/img/projects/FraudDetection/new_poster1.png" 
+        alt="Fraud Detection by Machine Learning"
+        
+          style="margin-bottom: 1rem !important;"
+        
+      />
+    </div>
+    
+  </div>
+
+  <!-- Small spacer div for clean separation -->
+  <div class="content-spacer" style="height: 0.25rem; width: 100%; clear: both; display: block;"></div>
+
+  <!-- Full width content section with normal spacing -->
+  <div class="project-content" style="margin-top: 0.25rem !important; padding-top: 0.25rem !important; position: relative; z-index: 999;">
+    <h2 id="highlights">Highlights</h2>
 
 <ul>
   <li><strong>Complete ML Pipeline</strong>: End-to-end fraud detection system from raw data to production-ready model</li>
@@ -451,38 +264,48 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     <ul>
       <li>~2,700 daily applications with high volatility</li>
       <li>~19,000 weekly applications (more stable)</li>
-      <li>Notable drops in late March and December</li>
     </ul>
   </li>
   <li><strong>Fraud Indicators</strong>
     <ul>
       <li>1.45% overall fraud rate (14,283 of 981,694 transactions)</li>
-      <li>Peak fraud in July (1.68%), lowest in March (1.33%)</li>
-      <li>No weekend effect on fraud rates</li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/1_fraud%20distribution.png" alt="Transaction Fraud Distribution" /></p>
+
+<p>2.1. <strong>Temporal Patterns</strong></p>
+<ul>
+  <li>Day 2 of each month shows high fraud</li>
+  <li>Mid-month periods (days 14-20) elevated risk</li>
+  <li>Summer months (Jun-Aug) have highest fraud activity</li>
+  <li>Notable drops in late March and December</li>
+  <li>Peak fraud in July (1.68%), lowest in March (1.33%)</li>
+  <li>Wednesdays in July-August particularly vulnerable</li>
+  <li>No weekend effect on fraud rates</li>
+</ul>
+
+<p><img src="/assets/img/projects/FraudDetection/1_time%20analysis.png" alt="Time Analysis" /><br />
+<img src="//assets/img/projects/FraudDetection/1_heatmap_daily%20fraud%20transaction.png" alt="Effect of Date and Day of Week" /></p>
+
+<p>2.2. <strong>Geographic Patterns</strong></p>
+<ul>
+  <li>High fraud ZIP codes identified</li>
+  <li>ZIP code 41310 has highest fraud rate</li>
+  <li>Geographic clustering may be useful for modeling</li>
+</ul>
+
+<p><img src="/assets/img/projects/FraudDetection/1_fraud_rate_map.gif" alt="Max Fraud Rate Hexbin Map" />
+  Access the interactive map: <a href="/assets/img/projects/FraudDetection/1_fraud_rate_map.html">Fraud Rate Map</a></p>
+
+<ol>
   <li><strong>Red Flags</strong>
     <ul>
       <li>One SSN used 10,000+ times</li>
       <li>Phone “999999999” used ~10,000 times</li>
       <li>Las Vegas addresses heavily concentrated</li>
       <li>Clear synthetic identity fraud patterns</li>
-    </ul>
-  </li>
-  <li><strong>Temporal Patterns</strong>
-    <ul>
-      <li>Day 2 of each month shows high fraud</li>
-      <li>Mid-month periods (days 14-20) elevated risk</li>
-      <li>Summer months (Jun-Aug) have highest fraud activity</li>
-      <li>Wednesdays in July-August particularly vulnerable</li>
-    </ul>
-  </li>
-  <li><strong>Geographic Patterns</strong>
-    <ul>
-      <li>High fraud ZIP codes identified</li>
-      <li>ZIP code 41310 has highest fraud rate</li>
-      <li>Geographic clustering may be useful for modeling</li>
-      <li>Access the interactive map: <a href="/assets/img/projects/FraudDetection/1_fraud_rate_map.html">Fraud Rate Map</a></li>
     </ul>
   </li>
   <li><strong>Recommendations</strong>
@@ -530,12 +353,22 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Features were selected for both predictive power and interpretability</li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/2_RFECV.png" alt="Feature Selection" /></p>
+
+<ol>
   <li><strong>Dimensionality Reduction &amp; Model Readiness</strong>
     <ul>
       <li>PCA showed that <strong>5 components explained &gt;95% of variance</strong>, with stable AUC across 3–10 components</li>
       <li>Random Forest + PCA cross-validation yielded AUC ≈ <strong>0.766</strong>, confirming robustness of engineered features</li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/2_pca.png" alt="Number of PCA Components to Explain Most Variance" /></p>
+
+<ol>
   <li><strong>Standardization</strong>
     <ul>
       <li>Finally z-scaled the dataset and store it.</li>
@@ -553,6 +386,11 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Training times varied significantly: Logistic Regression fastest (~1.2s), Neural Network slowest (~33s)</li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/3_Baseline%20Models%20Comparison.png" alt="7 Baseline Models Comparison" /></p>
+
+<ol>
   <li><strong>Model Selection Strategy</strong>
     <ul>
       <li>Custom weighted scoring implemented to prioritize fraud detection metrics:
@@ -584,6 +422,11 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       </li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/3_Optimization%20Effect.png" alt="Baseline VS Optimized" /></p>
+
+<ol>
   <li><strong>Final Model Comparison</strong>
     <ul>
       <li>XGBoost selected as best model based on weighted scoring</li>
@@ -598,6 +441,11 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       </li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/3_Optimized%20Model%20Comparison.png" alt="4 Optimized Models Comparison" /></p>
+
+<ol>
   <li><strong>Model Stability Analysis</strong>
     <ul>
       <li>XGBoost showed excellent stability across train/test/out-of-time datasets</li>
@@ -605,6 +453,11 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Consistent fraud capture rates (~84% in top bin, ~16% fraud rate in highest risk segment)</li>
     </ul>
   </li>
+</ol>
+
+<p><img src="/assets/img/projects/FraudDetection/final%20evaluation_xgboost.png" alt="Final Model Evaluation - XGBoost" /></p>
+
+<ol>
   <li><strong>Business Implications</strong>
     <ul>
       <li>Trade-off identified: XGBoost has higher false positive rate (2.6-2.8 per 1000) compared to historical GBDT model (0.5-1.4 per 1000)</li>
@@ -627,163 +480,220 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
   <li>Jupyter Notebooks</li>
 </ul>
 
-      </div>
-      
-      <!-- Links -->
-      
-      <div class="project-links">
-        <h3>Project Links</h3>
-        <ul>
-          
-            <li>
-              <a href="https://github.com/YannaCS/Fraud-Detection-By-Machine-Learning" target="_blank" rel="noopener">Repository</a>
-            </li>
-          
-            <li>
-              <a href="https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ" target="_blank" rel="noopener">Paper</a>
-            </li>
-          
-        </ul>
-      </div>
-      
-    </div>
-    
-    <!-- Resize Handle -->
-    <div class="resize-handle" id="resize-handle"></div>
-    
-    <!-- Right Panel - Fixed Images -->
-    <div class="right-panel" id="right-panel">
-      <!-- Main Screenshot -->
-      
-      <div class="main-screenshot">
-        <img src="/assets/img/projects/FraudDetection/new_poster1.png" alt="Fraud Detection by Machine Learning">
-      </div>
-      
-      
-      <!-- Additional Plots -->
-      
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/1_fraud%20distribution.png" alt="Transaction Fraud Distribution">
-          
-          <div class="plot-caption">Transaction Fraud Distribution</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/1_time%20analysis.png" alt="Time Analysis">
-          
-          <div class="plot-caption">Time Analysis</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/1_heatmap_daily%20fraud%20transaction.png" alt="Effect of Date and Day of Week">
-          
-          <div class="plot-caption">Effect of Date and Day of Week</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/1_fraud_rate_map.gif" alt="Max Fraud Rate Hexbin Map">
-          
-          <div class="plot-caption">Max Fraud Rate Hexbin Map</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/2_RFECV.png" alt="Feature Selection">
-          
-          <div class="plot-caption">Feature Selection</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/2_pca.png" alt="Number of PCA Components to Explain Most Variance">
-          
-          <div class="plot-caption">Number of PCA Components to Explain Most Variance</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/3_Baseline%20Models%20Comparison.png" alt="7 Baseline Models Comparison">
-          
-          <div class="plot-caption">7 Baseline Models Comparison</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/3_Optimization%20Effect.png" alt="Baseline VS Optimized">
-          
-          <div class="plot-caption">Baseline VS Optimized</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/3_Optimized%20Model%20Comparison.png" alt="4 Optimized Models Comparison">
-          
-          <div class="plot-caption">4 Optimized Models Comparison</div>
-          
-        </div>
-        
-        <div class="plot-item">
-          <img src="/assets/img/projects/FraudDetection/final%20evaluation_xgboost.png" alt=" Final Model Evaluation - XGBoost">
-          
-          <div class="plot-caption"> Final Model Evaluation - XGBoost</div>
-          
-        </div>
-        
-      
-    </div>
   </div>
+
   
-  <script>
-    // Make panels resizable
-    const container = document.getElementById('split-container');
-    const leftPanel = document.getElementById('left-panel');
-    const rightPanel = document.getElementById('right-panel');
-    const resizeHandle = document.getElementById('resize-handle');
-    
-    let isResizing = false;
-    let startX = 0;
-    let startLeftWidth = 0;
-    
-    resizeHandle.addEventListener('mousedown', (e) => {
-      isResizing = true;
-      startX = e.clientX;
-      startLeftWidth = leftPanel.offsetWidth;
-      document.body.style.cursor = 'col-resize';
-      e.preventDefault();
-    });
-    
-    document.addEventListener('mousemove', (e) => {
-      if (!isResizing) return;
-      
-      const deltaX = e.clientX - startX;
-      const containerWidth = container.offsetWidth;
-      const newLeftWidth = startLeftWidth + deltaX;
-      const leftPercent = (newLeftWidth / containerWidth) * 100;
-      
-      // Limit between 20% and 60%
-      if (leftPercent >= 20 && leftPercent <= 60) {
-        leftPanel.style.width = leftPercent + '%';
-        rightPanel.style.flex = '1';
-      }
-    });
-    
-    document.addEventListener('mouseup', () => {
-      isResizing = false;
-      document.body.style.cursor = '';
-    });
-    
-    // Save and restore panel sizes
-    const savedWidth = localStorage.getItem('projectPanelWidth');
-    if (savedWidth) {
-      leftPanel.style.width = savedWidth;
+    <div class="project-links">
+      <ul>
+        
+          <li>
+            <a href="https://github.com/YannaCS/Fraud-Detection-By-Machine-Learning" target="_blank" rel="noopener">Repository</a>
+          </li>
+        
+          <li>
+            <a href="https://ieeexplore.ieee.org/abstract/document/9361052?casa_token=cM9hxNzoQsMAAAAA:MSSrhPp0tk7Q7OFTmakg4IA3tdDQeqa0Lde-4y62e-HHLzm8ouVv1-ZVdE5yzLmmuQa9Sm7RgzQ" target="_blank" rel="noopener">Paper</a>
+          </li>
+        
+      </ul>
+    </div>
+  
+
+  <style>
+    /* Fix Hydejack theme positioning issues */
+    body.br-exclusions-footer.br-exclusions-aside.br-exclusions-button {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
     }
     
-    window.addEventListener('beforeunload', () => {
-      localStorage.setItem('projectPanelWidth', leftPanel.style.width);
+    hy-push-state {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      z-index: auto !important;
+    }
+    
+    main#_main.content.layout-project {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    
+    article.project {
+      position: relative !important;
+      top: auto !important;
+      transform: none !important;
+      margin-top: 0 !important;
+    }
+    
+    /* Override any theme styles with maximum specificity */
+    .project .project-header {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 2rem !important;
+      margin-bottom: 0.5rem !important;
+      padding-bottom: 0.5rem !important;
+      overflow: visible !important;
+      position: relative !important;
+      z-index: 1 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    .project .project-description {
+      flex: 1 !important;
+      min-width: 0 !important;
+      max-width: 50% !important;
+    }
+    
+    .project .project-screenshot {
+      flex: 1 !important;
+      min-width: 0 !important;
+      max-width: 50% !important;
+      position: relative !important;
+    }
+    
+    .project .project-screenshot img {
+      display: block !important;
+      max-width: 100% !important;
+      height: auto !important;
+      width: 100% !important;
+      margin-bottom: 1rem !important;
+      position: relative !important;
+      float: none !important;
+      clear: none !important;
+    }
+    
+    .project .content-spacer {
+      height: 0.25rem !important;
+      width: 100% !important;
+      clear: both !important;
+      display: block !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+    
+    .project .project-content {
+      position: relative !important;
+      z-index: 999 !important;
+      clear: both !important;
+      margin-top: 0.25rem !important;
+      padding-top: 0.25rem !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    
+    /* Mobile phones - stack vertically with minimal spacing */
+    @media (max-width: 600px) {
+      .project .project-header {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 0rem !important; /*1rem*/
+        padding-bottom: 0rem !important;
+      }
+      
+      .project .project-description,
+      .project .project-screenshot {
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      
+      .project .content-spacer {
+        height: 0rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 0rem !important;
+        padding-top: 0rem !important;
+      }
+    }
+    
+    /* Tablets and small laptops - reduced spacing */
+    @media (min-width: 601px) and (max-width: 1200px) {
+      .project .project-header {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.25rem !important;
+      }
+      
+      .project .content-spacer {
+        height: 0.25rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 0.25rem !important;
+        padding-top: 0.25rem !important;
+      }
+    }
+    
+    /* Large laptops and desktops - normal spacing */
+    @media (min-width: 1201px) {
+      .project .project-header {
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.25rem !important;
+      }
+      
+      .project .content-spacer {
+        height: 0.25rem !important;
+      }
+      
+      .project .project-content {
+        margin-top: 0.25rem !important;
+        padding-top: 0.25rem !important;
+      }
+    }
+    
+    /* Override any possible float or positioning */
+    .project .project-header * {
+      float: none !important;
+      position: relative !important;
+    }
+    
+    /* Ensure no negative margins */
+    .project .project-content *:first-child {
+      margin-top: 0 !important;
+    }
+    
+    /* Force clearfix */
+    .project .project-content::before,
+    .project .project-content::after {
+      content: "" !important;
+      display: table !important;
+      clear: both !important;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function fixHydejackPositioning() {
+        // Fix Hydejack positioning issues without any visual effects
+        const problematicElements = [
+          document.querySelector('body'),
+          document.querySelector('hy-push-state'),
+          document.querySelector('main#_main'),
+          document.querySelector('article.project')
+        ];
+        
+        problematicElements.forEach(el => {
+          if (el && el.getBoundingClientRect().top < 0) {
+            el.style.position = 'relative';
+            el.style.top = 'auto';
+            el.style.transform = 'none';
+            el.style.marginTop = '0';
+            el.style.paddingTop = '0';
+          }
+        });
+      }
+      
+      // Run the fix silently
+      fixHydejackPositioning();
+      window.addEventListener('resize', fixHydejackPositioning);
+      window.addEventListener('load', fixHydejackPositioning);
+      
+      setTimeout(fixHydejackPositioning, 100);
     });
   </script>
 </article>

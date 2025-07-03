@@ -1,5 +1,5 @@
 ---
-layout: project-grid
+layout: project
 title: Fraud Detection by Machine Learning
 date: 2020-08-01
 screenshot:
@@ -9,27 +9,6 @@ screenshot:
     1920w: /assets/img/projects/FraudDetection/new_poster1.png
     960w: /assets/img/projects/FraudDetection/new_poster1@0.5x.png
     480w: /assets/img/projects/FraudDetection/new_poster1@0.25x.png
-plots:
-  - src: /assets/img/projects/FraudDetection/1_fraud distribution.png
-    caption: "Transaction Fraud Distribution"
-  - src: /assets/img/projects/FraudDetection/1_time analysis.png
-    caption: "Time Analysis"
-  - src: /assets/img/projects/FraudDetection/1_heatmap_daily fraud transaction.png
-    caption: "Effect of Date and Day of Week"
-  - src: /assets/img/projects/FraudDetection/1_fraud_rate_map.gif
-    caption: "Max Fraud Rate Hexbin Map"
-  - src: /assets/img/projects/FraudDetection/2_RFECV.png
-    caption: "Feature Selection"
-  - src: /assets/img/projects/FraudDetection/2_pca.png
-    caption: "Number of PCA Components to Explain Most Variance"
-  - src: /assets/img/projects/FraudDetection/3_Baseline Models Comparison.png
-    caption: "7 Baseline Models Comparison"
-  - src: /assets/img/projects/FraudDetection/3_Optimization Effect.png
-    caption: "Baseline VS Optimized"
-  - src: /assets/img/projects/FraudDetection/3_Optimized Model Comparison.png
-    caption: "4 Optimized Models Comparison"
-  - src: /assets/img/projects/FraudDetection/final evaluation_xgboost.png
-    caption: " Final Model Evaluation - XGBoost"
 description: >
   A comprehensive machine learning pipeline for detecting fraudulent transactions with 99% accuracy. This project tackles extreme class imbalance using advanced techniques including SMOTE, ensemble methods, and automated hyperparameter optimization to protect financial systems in real-time.
 links:
@@ -75,27 +54,39 @@ featured: true
 1. **Application Volume**
 - ~2,700 daily applications with high volatility
 - ~19,000 weekly applications (more stable)
-- Notable drops in late March and December
+
 2. **Fraud Indicators**
 - 1.45% overall fraud rate (14,283 of 981,694 transactions)
+
+<img src="{{ '/assets/img/projects/FraudDetection/1_fraud distribution.png' | relative_url }}" alt='Transaction Fraud Distribution'>
+
+2.1. **Temporal Patterns**
+- Day 2 of each month shows high fraud
+- Mid-month periods (days 14-20) elevated risk
+- Summer months (Jun-Aug) have highest fraud activity
+- Notable drops in late March and December
 - Peak fraud in July (1.68%), lowest in March (1.33%)
+- Wednesdays in July-August particularly vulnerable
 - No weekend effect on fraud rates
+
+<img src="{{ '/assets/img/projects/FraudDetection/1_time analysis.png' | relative_url }}" alt='Time Analysis'>  
+<img src="{{ '//assets/img/projects/FraudDetection/1_heatmap_daily fraud transaction.png' | relative_url }}" alt='Effect of Date and Day of Week'>
+
+2.2. **Geographic Patterns**
+- High fraud ZIP codes identified
+- ZIP code 41310 has highest fraud rate
+- Geographic clustering may be useful for modeling
+
+<img src="{{ '/assets/img/projects/FraudDetection/1_fraud_rate_map.gif' | relative_url }}" alt='Max Fraud Rate Hexbin Map'>
+  Access the interactive map: [Fraud Rate Map](/assets/img/projects/FraudDetection/1_fraud_rate_map.html)
+  
 3. **Red Flags**
 - One SSN used 10,000+ times
 - Phone "999999999" used ~10,000 times
 - Las Vegas addresses heavily concentrated
 - Clear synthetic identity fraud patterns
-4. **Temporal Patterns**
-- Day 2 of each month shows high fraud
-- Mid-month periods (days 14-20) elevated risk
-- Summer months (Jun-Aug) have highest fraud activity
-- Wednesdays in July-August particularly vulnerable
-5. **Geographic Patterns**
-- High fraud ZIP codes identified
-- ZIP code 41310 has highest fraud rate
-- Geographic clustering may be useful for modeling
-- Access the interactive map: [Fraud Rate Map](/assets/img/projects/FraudDetection/1_fraud_rate_map.html)
-6. **Recommendations**
+
+4. **Recommendations**
 - Implement real-time duplicate SSN detection
 - Block obvious fake phone numbers
 - Enhanced monitoring on day 2 of each month
@@ -125,12 +116,18 @@ Expand the dataset from 9 features to 485 features, then reduced to 38 with filt
   - Selected top 70 based on average ranking, then applied RFECV to retain **38 optimal features**  
   - Features were selected for both predictive power and interpretability
 
+<img src="{{ '/assets/img/projects/FraudDetection/2_RFECV.png' | relative_url }}" alt='Feature Selection'>
+
 6. **Dimensionality Reduction & Model Readiness**  
   - PCA showed that **5 components explained >95% of variance**, with stable AUC across 3–10 components  
   - Random Forest + PCA cross-validation yielded AUC ≈ **0.766**, confirming robustness of engineered features
 
+<img src="{{ '/assets/img/projects/FraudDetection/2_pca.png' | relative_url }}" alt='Number of PCA Components to Explain Most Variance'>
+
 7. **Standardization**
   - Finally z-scaled the dataset and store it.
+
+
 
 ### Modeling
 1. **Baseline Model Performance**
@@ -138,6 +135,8 @@ Expand the dataset from 9 features to 485 features, then reduced to 38 with filt
 - XGBoost and LightGBM showed best ROC-AUC scores (~0.765), indicating superior discrimination ability
 - Neural Network achieved highest F1 score (0.617) among baseline models
 - Training times varied significantly: Logistic Regression fastest (~1.2s), Neural Network slowest (~33s)
+
+<img src="{{ '/assets/img/projects/FraudDetection/3_Baseline Models Comparison.png' | relative_url }}" alt='7 Baseline Models Comparison'>
 
 2. **Model Selection Strategy**
 - Custom weighted scoring implemented to prioritize fraud detection metrics:
@@ -157,6 +156,8 @@ Expand the dataset from 9 features to 485 features, then reduced to 38 with filt
   - XGBoost and LightGBM improved recall by ~13% but lost ~12% precision
   - Gradient Boosting showed smallest performance drop
 
+<img src="{{ '/assets/img/projects/FraudDetection/3_Optimization Effect.png' | relative_url }}" alt='Baseline VS Optimized'>
+
 4. **Final Model Comparison**
 - XGBoost selected as best model based on weighted scoring
 - Key performance metrics (XGBoost):
@@ -166,10 +167,14 @@ Expand the dataset from 9 features to 485 features, then reduced to 38 with filt
   - Precision: 0.751 (75.1% of flagged cases are actual fraud)
   - False Positive Rate: 0.0026-0.0028
 
+<img src="{{ '/assets/img/projects/FraudDetection/3_Optimized Model Comparison.png' | relative_url }}" alt='4 Optimized Models Comparison'>
+
 5. **Model Stability Analysis**
 - XGBoost showed excellent stability across train/test/out-of-time datasets
 - Minimal performance degradation from training to test sets
 - Consistent fraud capture rates (~84% in top bin, ~16% fraud rate in highest risk segment)
+
+<img src="{{ '/assets/img/projects/FraudDetection/final evaluation_xgboost.png' | relative_url }}" alt='Final Model Evaluation - XGBoost'>
 
 6. **Business Implications**
 - Trade-off identified: XGBoost has higher false positive rate (2.6-2.8 per 1000) compared to historical GBDT model (0.5-1.4 per 1000)
