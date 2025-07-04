@@ -270,36 +270,33 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
     <ul>
       <li>1.45% overall fraud rate (14,283 of 981,694 transactions)</li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/1_fraud%20distribution.png" alt="Transaction Fraud Distribution" width="600" /></p>
+
+    <p><strong>(1)Temporal Patterns</strong></p>
+    <ul>
+      <li>Day 2 of each month shows high fraud</li>
+      <li>Mid-month periods (days 14-20) elevated risk</li>
+      <li>Summer months (Jun-Aug) have highest fraud activity</li>
+      <li>Notable drops in late March and December</li>
+      <li>Peak fraud in July (1.68%), lowest in March (1.33%)</li>
+      <li>Wednesdays in July-August particularly vulnerable</li>
+      <li>No weekend effect on fraud rates</li>
+    </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/1_time%20analysis.png" alt="Time Analysis" /><br />
+ <img src="/assets/img/projects/FraudDetection/1_heatmap_daily%20fraud%20transaction.png" alt="Effect of Date and Day of Week" /></p>
+
+    <p><strong>(2)Geographic Patterns</strong></p>
+    <ul>
+      <li>High fraud ZIP codes identified</li>
+      <li>ZIP code 41310 has highest fraud rate</li>
+      <li>Geographic clustering may be useful for modeling</li>
+    </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/1_fraud_rate_map.gif" alt="Max Fraud Rate Hexbin Map" />
+ Access the interactive map: <a href="/assets/img/projects/FraudDetection/1_fraud_rate_map.html">Fraud Rate Map</a></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/1_fraud%20distribution.png" alt="Transaction Fraud Distribution" /></p>
-
-<p>2.1. <strong>Temporal Patterns</strong></p>
-<ul>
-  <li>Day 2 of each month shows high fraud</li>
-  <li>Mid-month periods (days 14-20) elevated risk</li>
-  <li>Summer months (Jun-Aug) have highest fraud activity</li>
-  <li>Notable drops in late March and December</li>
-  <li>Peak fraud in July (1.68%), lowest in March (1.33%)</li>
-  <li>Wednesdays in July-August particularly vulnerable</li>
-  <li>No weekend effect on fraud rates</li>
-</ul>
-
-<p><img src="/assets/img/projects/FraudDetection/1_time%20analysis.png" alt="Time Analysis" /><br />
-<img src="//assets/img/projects/FraudDetection/1_heatmap_daily%20fraud%20transaction.png" alt="Effect of Date and Day of Week" /></p>
-
-<p>2.2. <strong>Geographic Patterns</strong></p>
-<ul>
-  <li>High fraud ZIP codes identified</li>
-  <li>ZIP code 41310 has highest fraud rate</li>
-  <li>Geographic clustering may be useful for modeling</li>
-</ul>
-
-<p><img src="/assets/img/projects/FraudDetection/1_fraud_rate_map.gif" alt="Max Fraud Rate Hexbin Map" />
-  Access the interactive map: <a href="/assets/img/projects/FraudDetection/1_fraud_rate_map.html">Fraud Rate Map</a></p>
-
-<ol>
   <li><strong>Red Flags</strong>
     <ul>
       <li>One SSN used 10,000+ times</li>
@@ -308,7 +305,7 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Clear synthetic identity fraud patterns</li>
     </ul>
   </li>
-  <li><strong>Recommendations</strong>
+  <li><strong>💰Recommendations</strong>
     <ul>
       <li>Implement real-time duplicate SSN detection</li>
       <li>Block obvious fake phone numbers</li>
@@ -352,23 +349,17 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Selected top 70 based on average ranking, then applied RFECV to retain <strong>38 optimal features</strong></li>
       <li>Features were selected for both predictive power and interpretability</li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/2_RFECV.png" alt="Feature Selection" width="500" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/2_RFECV.png" alt="Feature Selection" /></p>
-
-<ol>
   <li><strong>Dimensionality Reduction &amp; Model Readiness</strong>
     <ul>
       <li>PCA showed that <strong>5 components explained &gt;95% of variance</strong>, with stable AUC across 3–10 components</li>
       <li>Random Forest + PCA cross-validation yielded AUC ≈ <strong>0.766</strong>, confirming robustness of engineered features</li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/2_pca.png" alt="Number of PCA Components to Explain Most Variance" width="500" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/2_pca.png" alt="Number of PCA Components to Explain Most Variance" /></p>
-
-<ol>
   <li><strong>Standardization</strong>
     <ul>
       <li>Finally z-scaled the dataset and store it.</li>
@@ -385,12 +376,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
       <li>Neural Network achieved highest F1 score (0.617) among baseline models</li>
       <li>Training times varied significantly: Logistic Regression fastest (~1.2s), Neural Network slowest (~33s)</li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/3_Baseline%20Models%20Comparison.png" alt="7 Baseline Models Comparison" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/3_Baseline%20Models%20Comparison.png" alt="7 Baseline Models Comparison" /></p>
-
-<ol>
   <li><strong>Model Selection Strategy</strong>
     <ul>
       <li>Custom weighted scoring implemented to prioritize fraud detection metrics:
@@ -421,12 +409,9 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
         </ul>
       </li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/3_Optimization%20Effect.png" alt="Baseline VS Optimized" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/3_Optimization%20Effect.png" alt="Baseline VS Optimized" /></p>
-
-<ol>
   <li><strong>Final Model Comparison</strong>
     <ul>
       <li>XGBoost selected as best model based on weighted scoring</li>
@@ -440,28 +425,22 @@ Powered by Hydejack v7.5.2 <https://qwtel.com/hydejack/>
         </ul>
       </li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/3_Optimized%20Model%20Comparison.png" alt="4 Optimized Models Comparison" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/3_Optimized%20Model%20Comparison.png" alt="4 Optimized Models Comparison" /></p>
-
-<ol>
   <li><strong>Model Stability Analysis</strong>
     <ul>
       <li>XGBoost showed excellent stability across train/test/out-of-time datasets</li>
       <li>Minimal performance degradation from training to test sets</li>
       <li>Consistent fraud capture rates (~84% in top bin, ~16% fraud rate in highest risk segment)</li>
     </ul>
+
+    <p><img src="/assets/img/projects/FraudDetection/final%20evaluation_xgboost.png" alt="Final Model Evaluation - XGBoost" width="500" /></p>
   </li>
-</ol>
-
-<p><img src="/assets/img/projects/FraudDetection/final%20evaluation_xgboost.png" alt="Final Model Evaluation - XGBoost" /></p>
-
-<ol>
-  <li><strong>Business Implications</strong>
+  <li><strong>💰Business Implications</strong>
     <ul>
       <li>Trade-off identified: XGBoost has higher false positive rate (2.6-2.8 per 1000) compared to historical GBDT model (0.5-1.4 per 1000)</li>
-      <li>Recommendation: Consider GBDT for production if false positives are critical concern</li>
+      <li>Recommendation: Consider XGBoost for production if false positives are critical concern</li>
       <li>Top 5% of scored transactions capture 84% of fraud cases, enabling efficient review strategies</li>
     </ul>
   </li>
