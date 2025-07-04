@@ -1,7 +1,7 @@
 ---
 layout: project
 title: WoW DataHub ☞ Game Management Dashboard & Analytics Platform
-date: 2024-04-01
+date: 2025-01-01
 screenshot:
   src: /assets/img/projects/WoW/Homepage.png
   srcset:
