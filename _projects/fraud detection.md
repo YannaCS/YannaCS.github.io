@@ -41,7 +41,8 @@ featured: true
 
 ### Key Achievements
 - **53.46% Fraud Detection Rate**: Catches more than half fraudulent transactions
-- **<0.5% False Positive Rate ➕ >51% True Positive Rate**: Minimizes customer friction and maximizes detection accuracy
+- **<0.5% False Positive Rate**: Minimizes customer friction
+- **>51% True Positive Rate**: Maximizes detection accuracy
 - **99% Accuracy**: Almost perfect, indicating excellent identification of non-fraud
 - **82-94% Precision**: Most flagged cases are indeed fraud
 - **0.76 AUC-ROC Score**: Good model discrimination
