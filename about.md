@@ -1149,20 +1149,23 @@ order: 1
 <h2>What Else</h2>
 
 <p><b>Beyond the world of data and code：</b></p>  
-  <p><span style="margin-left: 20px;">🏔️ I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures.</span></p>   
-  <p><span style="margin-left: 20px;">📚 When indoors, I like reading books that expand my horizons—from data science literature to thought-provoking fiction. </span></p> 
-  <p><span style="margin-left: 20px;">🎮 I'm also an enthusiastic League of Legends player, where <i>strategic thinking</i> and <i>teamwork</i> offer a different kind of problem-solving challenge.</span></p>
-  <p><span style="margin-left: 20px;">🍰 In my kitchen, you'll find me experimenting with baking techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</span></p>
+  <div style="line-height: 1.5;">
+  <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🏔️ I enjoy exploring beautiful trails, finding tranquility and perspective on weekend hiking adventures.</span></p>
+  <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">📚 When indoors, I like reading books that expand my horizons—from data science literature to thought-provoking fiction.</span></p>
+  <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🎮 I'm also an enthusiastic League of Legends player, where <i>strategic thinking</i> and <i>teamwork</i> offer a different kind of problem-solving challenge.</span></p>
+  <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🍰 In my kitchen, you'll find me experimenting with baking techniques, applying the same precision and creativity that drives my professional work to create perfect pastries and breads.</span></p>
+</div>
 
 <br>
-<p><b>My constant companion on life's adventures is:</b></p>
+
 <div class="dog-section">
-  <div class="dog-text">
-      <p><span style="margin-left: 20px;">🐕 Wangwang Shen, my beloved dog! </span></p>
-      <p><span style="margin-left: 20px;">✈️ He made the incredible journey with me from China to the USA.</span></p>
-      <p><span style="margin-left: 20px;">🦋 Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, <i>no matter how busy</i> life gets.</span></p>
-      <p><span style="margin-left: 20px;">🌈 We really enjoy the US's friendly pet-environment.</span></p>
-    <p><b>To pet him and enjoy his fluffy tail,</b> <strong class="hire-me">HIRE ME!</strong></p>
+  <div class="dog-text" style="line-height: 1.5;">
+      <p><b>My constant companion on life's adventures is:</b></p>
+      <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🐕 Wangwang Shen, my beloved dog! </span></p>
+      <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">✈️ He made the incredible journey with me from China to the USA.</span></p>
+      <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🦋 Wangwang's curiosity and joy remind me to appreciate the simple pleasures and find wonder in our surroundings, <i>no matter how busy</i> life gets.</span></p>
+      <p style="margin: 0.5rem 0;"><span style="margin-left: 20px;">🌈 We really enjoy the US's friendly pet-environment.</span></p>
+    <p style="margin: 2rem 0;"><b>To pet him and enjoy his fluffy tail,</b> <strong class="hire-me">HIRE ME!</strong></p>
   </div>
   
   <div class="dog-image">
@@ -1174,7 +1177,7 @@ order: 1
 
 <h2>Contact</h2>
 
-Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/chengyang-shen) and [GitHub](https://github.com/YannisCS). You can also access to the above links and **download my resume** from side bar.  
+Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/chengyang-shen) and [GitHub](https://github.com/YannisCS). You can also access to the above links and <a href="https://yannacs.github.io/assets/resume_Jun_09_2025.pdf" target="_blank" onclick="event.stopPropagation();"><b>download my resume</b></a> from side bar.  
 
 I'm here to help transform your data into **valuable insights and profit!**
 
