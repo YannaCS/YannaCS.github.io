@@ -1177,7 +1177,7 @@ order: 1
 
 <h2>Contact</h2>
 
-Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on <a href="https://www.linkedin.com/in/chengyang-shen" target="_blank" onclick="event.stopPropagation();">LinkedIn</a> and <a href="https://github.com/YannaCS" target="_blank" onclick="event.stopPropagation();">GitHub</a>. You can also access to the above links and <a href="https://yannacs.github.io/assets/resume_Jun_09_2025.pdf" target="_blank" onclick="event.stopPropagation();"><b>download my resume</b></a> from side bar.  
+Feel free to reach out to me at [yanna.cshen@gmail.com](mailto:yanna.cshen@gmail.com) or connect with me on <a href="https://www.linkedin.com/in/chengyang-shen" target="_blank" onclick="event.stopPropagation();">LinkedIn</a> and <a href="https://github.com/YannaCS" target="_blank" onclick="event.stopPropagation();">GitHub</a>. You can also access to the above links and <a href="https://yannacs.github.io/assets/resume.pdf" target="_blank" onclick="event.stopPropagation();"><b>download my resume</b></a> from side bar.  
 
 
 I'm here to help transform your data into **valuable insights and profit!**
