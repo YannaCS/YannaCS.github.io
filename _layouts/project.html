@@ -28,6 +28,17 @@ layout: base
     {% endif %}
   </div>
 
+  {% if page.links %}
+    <div class="project-links">
+      <ul>
+        {% for link in page.links %}
+          <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
+          <br>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
   <!-- Small spacer div for clean separation -->
   <div class="content-spacer" style="height: 0.25rem; width: 100%; clear: both; display: block;"></div>
 
@@ -36,17 +47,7 @@ layout: base
     {{ content }}
   </div>
 
-  {% if page.links %}
-    <div class="project-links">
-      <ul>
-        {% for link in page.links %}
-          <li>
-            <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div>
-  {% endif %}
+  <!-- formal link position-->
 
   <style>
     /* Fix Hydejack theme positioning issues */
